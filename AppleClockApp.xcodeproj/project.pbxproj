@@ -66,6 +66,7 @@
 		FCC1EA272B5061C90001A65A /* AppleClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1EA492B5180A40001A65A /* Cells */,
 				FCC1EA462B517FB70001A65A /* ViewModel */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
@@ -73,11 +74,7 @@
 				FCC1EA312B5061CC0001A65A /* Assets.xcassets */,
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
-				FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */,
-				FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */,
 				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
-				FCC1EA422B516A8C0001A65A /* AlarmListHeaderCell.swift */,
-				FCC1EA432B516A8C0001A65A /* AlarmListHeaderCell.xib */,
 			);
 			path = AppleClockApp;
 			sourceTree = "<group>";
@@ -88,6 +85,25 @@
 				FCC1EA472B51804E0001A65A /* AlarmListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCC1EA492B5180A40001A65A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA4A2B5180EA0001A65A /* Header */,
+				FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */,
+				FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FCC1EA4A2B5180EA0001A65A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA422B516A8C0001A65A /* AlarmListHeaderCell.swift */,
+				FCC1EA432B516A8C0001A65A /* AlarmListHeaderCell.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
