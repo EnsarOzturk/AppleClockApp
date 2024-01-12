@@ -37,6 +37,9 @@
                             <constraint firstItem="X4w-Hu-ALt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wRN-Af-kwu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

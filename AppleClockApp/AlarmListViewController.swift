@@ -8,7 +8,8 @@
 import UIKit
 
 class AlarmListViewController: UIViewController {
-
+    @IBOutlet var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
