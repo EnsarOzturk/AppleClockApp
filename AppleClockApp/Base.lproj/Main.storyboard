@@ -72,7 +72,10 @@
                             <constraint firstItem="X4w-Hu-ALt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wRN-Af-kwu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QNU-ql-0dd"/>
+                    <navigationItem key="navigationItem" id="QNU-ql-0dd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zPq-or-Csu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
                     </connections>
