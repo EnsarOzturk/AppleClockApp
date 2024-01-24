@@ -13,8 +13,4 @@ class AddAlarmViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
-
-
 }

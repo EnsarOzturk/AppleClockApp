@@ -86,6 +86,92 @@
             </objects>
             <point key="canvasLocation" x="746" y="-365"/>
         </scene>
+        <!--Add Alarm View Controller-->
+        <scene sceneID="7ux-Sr-Gwy">
+            <objects>
+                <viewController storyboardIdentifier="AddAlarmViewController" id="NdU-Cd-eYK" customClass="AddAlarmViewController" customModule="AppleClockApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jsy-Jl-imv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sae-Hc-O5C">
+                                <rect key="frame" x="313" y="75" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8TY-tz-xlY"/>
+                                    <constraint firstAttribute="height" constant="40" id="9bP-FT-BEX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99851197000000003" green="0.62825745340000005" blue="0.23118653889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fL9-0B-580">
+                                <rect key="frame" x="0.0" y="75" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="d6s-qn-3zN"/>
+                                    <constraint firstAttribute="height" constant="40" id="fQg-c0-K3M"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" subtitle="" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Cancel">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99851197000000003" green="0.62825745340000005" blue="0.23118653889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgk-0j-Xkw">
+                                <rect key="frame" x="149" y="75" width="95" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="XVn-X7-GGI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mha-nQ-Uex">
+                                <rect key="frame" x="8" y="123" width="377" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="iUh-Nu-uY1"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="tr_TR"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zDF-6i-Odc"/>
+                        <color key="backgroundColor" red="0.109832339" green="0.1096572801" blue="0.11764822160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fL9-0B-580" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="3By-3o-cSW"/>
+                            <constraint firstItem="fL9-0B-580" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" id="CQL-v7-YAA"/>
+                            <constraint firstItem="sae-Hc-O5C" firstAttribute="trailing" secondItem="zDF-6i-Odc" secondAttribute="trailing" id="FH4-2v-xiC"/>
+                            <constraint firstItem="zDF-6i-Odc" firstAttribute="trailing" secondItem="mha-nQ-Uex" secondAttribute="trailing" constant="8" id="QRY-0i-dTg"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="top" secondItem="sae-Hc-O5C" secondAttribute="bottom" constant="8" symbolic="YES" id="Tat-47-IZo"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="centerX" secondItem="Jsy-Jl-imv" secondAttribute="centerX" id="UPc-Tn-oXy"/>
+                            <constraint firstItem="lgk-0j-Xkw" firstAttribute="leading" secondItem="fL9-0B-580" secondAttribute="trailing" constant="69" id="bq4-CC-YG5"/>
+                            <constraint firstItem="lgk-0j-Xkw" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="lL7-FC-iEV"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" constant="8" id="ngS-qC-YOo"/>
+                            <constraint firstItem="sae-Hc-O5C" firstAttribute="leading" secondItem="lgk-0j-Xkw" secondAttribute="trailing" constant="69" id="olz-sX-7NT"/>
+                            <constraint firstItem="sae-Hc-O5C" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="y85-Jm-ps8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm4-ce-HXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1448.0916030534352" y="-365.49295774647891"/>
+        </scene>
         <!--Item-->
         <scene sceneID="L2C-hg-hUZ">
             <objects>
