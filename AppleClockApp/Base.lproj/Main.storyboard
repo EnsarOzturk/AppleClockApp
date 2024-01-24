@@ -167,6 +167,11 @@
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="y85-Jm-ps8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="fL9-0B-580" id="Qm3-eR-pBC"/>
+                        <outlet property="datePicker" destination="mha-nQ-Uex" id="Kem-eD-2c7"/>
+                        <outlet property="saveButton" destination="sae-Hc-O5C" id="ViP-ZQ-ZYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dm4-ce-HXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

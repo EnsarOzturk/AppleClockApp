@@ -8,9 +8,13 @@
 import UIKit
 
 class AddAlarmViewController: UIViewController {
-
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
     }
 }
