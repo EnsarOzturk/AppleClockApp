@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC4C32552B611F9600CCBDF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */,
+				FCC1EA462B517FB70001A65A /* ViewModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FCC1EA1C2B5061C90001A65A = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +77,8 @@
 		FCC1EA272B5061C90001A65A /* AppleClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C32552B611F9600CCBDF1 /* Models */,
 				FCC1EA492B5180A40001A65A /* Cells */,
-				FCC1EA462B517FB70001A65A /* ViewModel */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
 				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
@@ -77,7 +86,6 @@
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
 				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
-				FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */,
 			);
 			path = AppleClockApp;
 			sourceTree = "<group>";

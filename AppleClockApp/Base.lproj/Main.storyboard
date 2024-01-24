@@ -54,7 +54,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-Hu-ALt">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZAb-w6-uLj">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZAb-w6-uLj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -77,6 +77,8 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="AddAlarmTogglebuttonTapped" destination="VJC-dh-kjY" id="KPB-gR-XOE"/>
+                        <outlet property="AlarmEditButtonTapped" destination="zPq-or-Csu" id="56x-23-XYh"/>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
                     </connections>
                 </viewController>
