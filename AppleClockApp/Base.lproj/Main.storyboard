@@ -146,7 +146,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mha-nQ-Uex">
                                 <rect key="frame" x="8" y="123" width="377" height="215"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="iUh-Nu-uY1"/>
+                                    <constraint firstAttribute="height" constant="215" id="L7V-Tm-7Gp"/>
                                 </constraints>
                                 <locale key="locale" localeIdentifier="tr_TR"/>
                             </datePicker>
@@ -157,12 +157,12 @@
                             <constraint firstItem="fL9-0B-580" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="3By-3o-cSW"/>
                             <constraint firstItem="fL9-0B-580" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" id="CQL-v7-YAA"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="trailing" secondItem="zDF-6i-Odc" secondAttribute="trailing" id="FH4-2v-xiC"/>
-                            <constraint firstItem="zDF-6i-Odc" firstAttribute="trailing" secondItem="mha-nQ-Uex" secondAttribute="trailing" constant="8" id="QRY-0i-dTg"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="top" secondItem="sae-Hc-O5C" secondAttribute="bottom" constant="8" symbolic="YES" id="Tat-47-IZo"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="centerX" secondItem="Jsy-Jl-imv" secondAttribute="centerX" id="UPc-Tn-oXy"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="top" secondItem="sae-Hc-O5C" secondAttribute="bottom" constant="8" symbolic="YES" id="Pgi-nA-WQX"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" constant="8" id="Wnt-ki-vRW"/>
                             <constraint firstItem="lgk-0j-Xkw" firstAttribute="leading" secondItem="fL9-0B-580" secondAttribute="trailing" constant="69" id="bq4-CC-YG5"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="centerX" secondItem="lgk-0j-Xkw" secondAttribute="centerX" id="gPs-gi-EtC"/>
                             <constraint firstItem="lgk-0j-Xkw" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="lL7-FC-iEV"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" constant="8" id="ngS-qC-YOo"/>
+                            <constraint firstItem="zDF-6i-Odc" firstAttribute="trailing" secondItem="mha-nQ-Uex" secondAttribute="trailing" constant="8" id="mlv-Xk-1Jd"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="leading" secondItem="lgk-0j-Xkw" secondAttribute="trailing" constant="69" id="olz-sX-7NT"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="y85-Jm-ps8"/>
                         </constraints>
