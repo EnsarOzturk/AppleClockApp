@@ -15,3 +15,9 @@ class AlarmListViewController: UIViewController {
 
     }
 }
+
+extension AlarmListViewController: UICollectionViewDelegate {
+    
+}
+
+
