@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol AlarmListViewModelProtocol {
+    
+}
+
+class AlarmListViewModel {
+    
+}

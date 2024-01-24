@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aw8-mD-omx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aw8-mD-omx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,23 +36,23 @@
                     </tabBar>
                     <connections>
                         <segue destination="Hpl-mh-g1h" kind="relationship" relationship="viewControllers" id="Glt-ke-YGX"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0Ys-6a-GMW"/>
+                        <segue destination="Oh4-NL-w22" kind="relationship" relationship="viewControllers" id="0Ys-6a-GMW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWG-Wb-BXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-897" y="16"/>
         </scene>
-        <!--Item-->
+        <!--Alarm List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AlarmListViewController" customModule="AppleClockApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmListViewController" id="BYZ-38-t0r" customClass="AlarmListViewController" customModule="AppleClockApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-Hu-ALt">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZAb-w6-uLj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -71,7 +72,6 @@
                             <constraint firstItem="X4w-Hu-ALt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wRN-Af-kwu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gHE-cH-hIG"/>
                     <navigationItem key="navigationItem" id="QNU-ql-0dd"/>
                     <connections>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
@@ -79,7 +79,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="-365"/>
+            <point key="canvasLocation" x="746" y="-365"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="L2C-hg-hUZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oh4-NL-w22" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gHE-cH-hIG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eac-m3-xLg">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="erR-e1-6Gb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdm-FY-O3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6.8702290076335872" y="-365.49295774647891"/>
         </scene>
     </scenes>
     <resources>
