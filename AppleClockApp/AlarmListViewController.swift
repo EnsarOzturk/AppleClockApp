@@ -9,6 +9,7 @@ import UIKit
 
 class AlarmListViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    var alarmList :[Alarm] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

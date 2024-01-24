@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC4C324F2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C324D2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift */; };
 		FC4C32502B60FFE400CCBDF1 /* AlarmListHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */; };
+		FC4C32522B611E6F00CCBDF1 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */; };
 		FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA282B5061C90001A65A /* AppDelegate.swift */; };
 		FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */; };
 		FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA2E2B5061C90001A65A /* Main.storyboard */; };
@@ -17,12 +18,12 @@
 		FCC1EA3E2B514A9F0001A65A /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */; };
 		FCC1EA3F2B514A9F0001A65A /* AlarmListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */; };
 		FCC1EA412B5166620001A65A /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA402B5166620001A65A /* AlarmListViewController.swift */; };
-		FCC1EA482B51804E0001A65A /* AlarmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA472B51804E0001A65A /* AlarmListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC4C324D2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListHeaderCell.swift; sourceTree = "<group>"; };
 		FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListHeaderCell.xib; sourceTree = "<group>"; };
+		FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		FCC1EA252B5061C90001A65A /* AppleClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC1EA282B5061C90001A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
 		FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListCell.xib; sourceTree = "<group>"; };
 		FCC1EA402B5166620001A65A /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
-		FCC1EA472B51804E0001A65A /* AlarmListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +75,7 @@
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
 				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
+				FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */,
 			);
 			path = AppleClockApp;
 			sourceTree = "<group>";
@@ -82,7 +83,6 @@
 		FCC1EA462B517FB70001A65A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FCC1EA472B51804E0001A65A /* AlarmListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 			files = (
 				FCC1EA412B5166620001A65A /* AlarmListViewController.swift in Sources */,
 				FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */,
+				FC4C32522B611E6F00CCBDF1 /* ClockModel.swift in Sources */,
 				FC4C324F2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift in Sources */,
 				FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */,
-				FCC1EA482B51804E0001A65A /* AlarmListViewModel.swift in Sources */,
 				FCC1EA3E2B514A9F0001A65A /* AlarmListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
