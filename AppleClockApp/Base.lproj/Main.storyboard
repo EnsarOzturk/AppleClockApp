@@ -73,12 +73,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNU-ql-0dd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zPq-or-Csu"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zPq-or-Csu">
+                            <connections>
+                                <action selector="alarmEditButtonTapped:" destination="BYZ-38-t0r" id="jOu-A0-PPU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY">
+                            <connections>
+                                <action selector="addAlarmToggleButtonTapped:" destination="BYZ-38-t0r" id="wWy-Cu-zvk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AddAlarmTogglebuttonTapped" destination="VJC-dh-kjY" id="KPB-gR-XOE"/>
-                        <outlet property="AlarmEditButtonTapped" destination="zPq-or-Csu" id="56x-23-XYh"/>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
                     </connections>
                 </viewController>
@@ -100,6 +106,7 @@
                                     <constraint firstAttribute="width" constant="80" id="8TY-tz-xlY"/>
                                     <constraint firstAttribute="height" constant="40" id="9bP-FT-BEX"/>
                                 </constraints>
+                                <color key="tintColor" red="0.97501498460000002" green="0.62037247419999997" blue="0.22334301470000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -113,6 +120,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="NdU-Cd-eYK" eventType="touchUpInside" id="tQd-fg-46U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fL9-0B-580">
                                 <rect key="frame" x="0.0" y="75" width="80" height="40"/>
@@ -120,6 +130,7 @@
                                     <constraint firstAttribute="width" constant="80" id="d6s-qn-3zN"/>
                                     <constraint firstAttribute="height" constant="40" id="fQg-c0-K3M"/>
                                 </constraints>
+                                <color key="tintColor" red="0.95152753590000005" green="0.6203082204" blue="0.2311991155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" subtitle="" titleAlignment="center">
                                     <attributedString key="attributedTitle">
@@ -140,14 +151,11 @@
                                     <constraint firstAttribute="height" constant="24" id="XVn-X7-GGI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mha-nQ-Uex">
-                                <rect key="frame" x="8" y="123" width="377" height="215"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="L7V-Tm-7Gp"/>
-                                </constraints>
+                                <rect key="frame" x="8" y="123" width="377" height="216"/>
                                 <locale key="locale" localeIdentifier="tr_TR"/>
                             </datePicker>
                         </subviews>
@@ -157,17 +165,17 @@
                             <constraint firstItem="fL9-0B-580" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="3By-3o-cSW"/>
                             <constraint firstItem="fL9-0B-580" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" id="CQL-v7-YAA"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="trailing" secondItem="zDF-6i-Odc" secondAttribute="trailing" id="FH4-2v-xiC"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="top" secondItem="sae-Hc-O5C" secondAttribute="bottom" constant="8" symbolic="YES" id="Pgi-nA-WQX"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" constant="8" id="Wnt-ki-vRW"/>
+                            <constraint firstItem="zDF-6i-Odc" firstAttribute="trailing" secondItem="mha-nQ-Uex" secondAttribute="trailing" constant="8" id="MPa-Xg-MFv"/>
                             <constraint firstItem="lgk-0j-Xkw" firstAttribute="leading" secondItem="fL9-0B-580" secondAttribute="trailing" constant="69" id="bq4-CC-YG5"/>
-                            <constraint firstItem="mha-nQ-Uex" firstAttribute="centerX" secondItem="lgk-0j-Xkw" secondAttribute="centerX" id="gPs-gi-EtC"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="top" secondItem="sae-Hc-O5C" secondAttribute="bottom" constant="8" symbolic="YES" id="kEr-Uq-dEp"/>
                             <constraint firstItem="lgk-0j-Xkw" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="lL7-FC-iEV"/>
-                            <constraint firstItem="zDF-6i-Odc" firstAttribute="trailing" secondItem="mha-nQ-Uex" secondAttribute="trailing" constant="8" id="mlv-Xk-1Jd"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="leading" secondItem="lgk-0j-Xkw" secondAttribute="trailing" constant="69" id="olz-sX-7NT"/>
+                            <constraint firstItem="mha-nQ-Uex" firstAttribute="leading" secondItem="zDF-6i-Odc" secondAttribute="leading" constant="8" id="qa9-04-Pe9"/>
                             <constraint firstItem="sae-Hc-O5C" firstAttribute="top" secondItem="zDF-6i-Odc" secondAttribute="top" constant="16" id="y85-Jm-ps8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAlarmLabel" destination="lgk-0j-Xkw" id="hPg-hI-eCK"/>
                         <outlet property="cancelButton" destination="fL9-0B-580" id="Qm3-eR-pBC"/>
                         <outlet property="datePicker" destination="mha-nQ-Uex" id="Kem-eD-2c7"/>
                         <outlet property="saveButton" destination="sae-Hc-O5C" id="ViP-ZQ-ZYB"/>
