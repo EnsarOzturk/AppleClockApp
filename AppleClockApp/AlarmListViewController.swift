@@ -47,10 +47,7 @@ class AlarmListViewController: UIViewController {
 }
 
 extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return alarmList.count
     }
@@ -63,7 +60,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.delegate = self
         cell.alarmClockLabel.text = alarm.hour
         cell.alarmSwitch.isOn = alarm.isSwitchOn
-        
+    
         return cell
     }
     
@@ -74,7 +71,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        return CGSize(width: UIScreen.main.bounds.width, height: 200)
+        return CGSize(width: UIScreen.main.bounds.width, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -102,14 +99,12 @@ extension AlarmListViewController: AlarmSaveDelagate {
     func alarmSaved(hour: String) {
         let alarm = Alarm(hour: hour, isSwitchOn: true)
         alarmList.append(alarm)
-        
         collectionView.reloadData()
     }
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
     func alarmSwitchValueChanged(isOn: Bool, index: Int) {
-        
         alarmList[index].isSwitchOn = isOn
     }
 }
