@@ -11,6 +11,8 @@
 		FC4C32502B60FFE400CCBDF1 /* AlarmListHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */; };
 		FC4C32522B611E6F00CCBDF1 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */; };
 		FC4C32572B612A4700CCBDF1 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */; };
+		FC4C325A2B629F4D00CCBDF1 /* AlarmListMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32582B629F4D00CCBDF1 /* AlarmListMainCell.swift */; };
+		FC4C325B2B629F4D00CCBDF1 /* AlarmListMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C32592B629F4D00CCBDF1 /* AlarmListMainCell.xib */; };
 		FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA282B5061C90001A65A /* AppDelegate.swift */; };
 		FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */; };
 		FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA2E2B5061C90001A65A /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListHeaderCell.xib; sourceTree = "<group>"; };
 		FC4C32512B611E6F00CCBDF1 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
+		FC4C32582B629F4D00CCBDF1 /* AlarmListMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListMainCell.swift; sourceTree = "<group>"; };
+		FC4C32592B629F4D00CCBDF1 /* AlarmListMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListMainCell.xib; sourceTree = "<group>"; };
 		FCC1EA252B5061C90001A65A /* AppleClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC1EA282B5061C90001A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				FCC1EA4A2B5180EA0001A65A /* Header */,
 				FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */,
 				FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */,
+				FC4C32582B629F4D00CCBDF1 /* AlarmListMainCell.swift */,
+				FC4C32592B629F4D00CCBDF1 /* AlarmListMainCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4C325B2B629F4D00CCBDF1 /* AlarmListMainCell.xib in Resources */,
 				FCC1EA352B5061CC0001A65A /* LaunchScreen.storyboard in Resources */,
 				FCC1EA322B5061CC0001A65A /* Assets.xcassets in Resources */,
 				FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */,
@@ -190,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4C325A2B629F4D00CCBDF1 /* AlarmListMainCell.swift in Sources */,
 				FCC1EA412B5166620001A65A /* AlarmListViewController.swift in Sources */,
 				FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */,
 				FC4C32522B611E6F00CCBDF1 /* ClockModel.swift in Sources */,

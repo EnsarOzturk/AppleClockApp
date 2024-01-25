@@ -15,7 +15,7 @@ class AlarmListViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            self.title = "Alarm"
+            self.title = "Alarms"
             self.navigationController?.navigationBar.prefersLargeTitles = true
             collectionView.dataSource = self
             collectionView.delegate = self
