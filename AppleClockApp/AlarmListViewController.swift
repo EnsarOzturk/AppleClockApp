@@ -26,6 +26,7 @@ class AlarmListViewController: UIViewController {
             navigationController?.navigationBar.backgroundColor = UIColor(named: "tabBarColor")
             navigationController?.navigationBar.tintColor = UIColor(named: "buttonColor")
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -74,6 +75,10 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         return CGSize(width: UIScreen.main.bounds.width, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

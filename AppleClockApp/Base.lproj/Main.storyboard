@@ -156,7 +156,10 @@
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mha-nQ-Uex">
                                 <rect key="frame" x="8" y="123" width="377" height="216"/>
-                                <locale key="locale" localeIdentifier="tr_TR"/>
+                                <locale key="locale" localeIdentifier="tr"/>
+                                <connections>
+                                    <action selector="datePickerValueChange:" destination="NdU-Cd-eYK" eventType="valueChanged" id="trC-vJ-ljI"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zDF-6i-Odc"/>

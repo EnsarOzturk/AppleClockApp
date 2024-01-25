@@ -45,6 +45,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYo-01-Akw">
                         <rect key="frame" x="8" y="95" width="300" height="1"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="3aZ-II-bFS"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>

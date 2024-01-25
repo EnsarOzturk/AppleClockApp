@@ -34,4 +34,12 @@ class AddAlarmViewController: UIViewController {
             self.dismiss(animated: true)
         }
     }
+    
+    @IBAction func datePickerValueChange(_ sender: UIDatePicker) {
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .medium
+        dateFormater.timeStyle = .short
+        dateFormater.dateFormat = "HH:mm"
+        addAlarmLabel.text = dateFormater.string(from: datePicker.date)
+    }
 }
