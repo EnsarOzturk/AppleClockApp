@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol AddAlarmDelagate: AnyObject {
+protocol AlarmSaveDelagate: AnyObject {
     func alarmSaved(hour: String)
 }
 
 class AddAlarmViewController: UIViewController {
+    weak var delegate : AlarmSaveDelagate?
+    
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var addAlarmLabel: UILabel!
-    weak var delegate: AddAlarmDelagate?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
