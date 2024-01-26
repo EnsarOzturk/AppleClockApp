@@ -58,6 +58,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FC4C325C2B63D24800CCBDF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA312B5061CC0001A65A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FCC1EA1C2B5061C90001A65A = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +85,12 @@
 		FCC1EA272B5061C90001A65A /* AppleClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C325C2B63D24800CCBDF1 /* Resources */,
 				FC4C32552B611F9600CCBDF1 /* Models */,
 				FCC1EA492B5180A40001A65A /* Cells */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
 				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
-				FCC1EA312B5061CC0001A65A /* Assets.xcassets */,
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
 				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
@@ -145,7 +153,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					FCC1EA242B5061C90001A65A = {
 						CreatedOnToolsVersion = 14.2;
@@ -258,6 +266,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -318,6 +327,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -12,12 +12,11 @@ protocol AlarmSaveDelagate: AnyObject {
 }
 
 class AddAlarmViewController: UIViewController {
-    weak var delegate : AlarmSaveDelagate?
-    
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var addAlarmLabel: UILabel!
+    weak var delegate : AlarmSaveDelagate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
