@@ -86,8 +86,29 @@
 		FC4C325F2B63D38700CCBDF1 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C325E2B63D33E00CCBDF1 /* Controllers */,
+				FC4C32552B611F9600CCBDF1 /* Models */,
+				FC4C325D2B63D2E800CCBDF1 /* Module */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		FC4C32602B63D44800CCBDF1 /* AlarmListHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC4C324D2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift */,
+				FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */,
+			);
+			path = AlarmListHeaderCell;
+			sourceTree = "<group>";
+		};
+		FC4C32612B63D46700CCBDF1 /* AlarmListCell */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */,
+				FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */,
+			);
+			path = AlarmListCell;
 			sourceTree = "<group>";
 		};
 		FCC1EA1C2B5061C90001A65A = {
@@ -110,10 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4C325F2B63D38700CCBDF1 /* Api */,
-				FC4C325E2B63D33E00CCBDF1 /* Controllers */,
-				FC4C325D2B63D2E800CCBDF1 /* Module */,
 				FC4C325C2B63D24800CCBDF1 /* Resources */,
-				FC4C32552B611F9600CCBDF1 /* Models */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
 				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
@@ -133,9 +151,8 @@
 		FCC1EA492B5180A40001A65A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C32612B63D46700CCBDF1 /* AlarmListCell */,
 				FCC1EA4A2B5180EA0001A65A /* Header */,
-				FCC1EA3C2B514A9F0001A65A /* AlarmListCell.swift */,
-				FCC1EA3D2B514A9F0001A65A /* AlarmListCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -143,8 +160,7 @@
 		FCC1EA4A2B5180EA0001A65A /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				FC4C324D2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift */,
-				FC4C324E2B60FFE400CCBDF1 /* AlarmListHeaderCell.xib */,
+				FC4C32602B63D44800CCBDF1 /* AlarmListHeaderCell */,
 			);
 			path = Header;
 			sourceTree = "<group>";
