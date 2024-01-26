@@ -9,22 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="CdJ-Z5-pAD">
-            <objects>
-                <viewController id="Hpl-mh-g1h" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qDi-MV-A6N">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="DOS-OE-ec2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wbx-VR-yeF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w9Q-qg-o4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7" y="320"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OQR-lQ-kwU">
             <objects>
@@ -35,7 +19,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Hpl-mh-g1h" kind="relationship" relationship="viewControllers" id="Glt-ke-YGX"/>
                         <segue destination="Oh4-NL-w22" kind="relationship" relationship="viewControllers" id="0Ys-6a-GMW"/>
                     </connections>
                 </tabBarController>
@@ -188,11 +171,11 @@
             </objects>
             <point key="canvasLocation" x="1448.0916030534352" y="-365.49295774647891"/>
         </scene>
-        <!--Item-->
+        <!--Alarms-->
         <scene sceneID="L2C-hg-hUZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oh4-NL-w22" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gHE-cH-hIG"/>
+                    <tabBarItem key="tabBarItem" title="Alarms" image="alarm.fill" catalog="system" selectedImage="alarm.fill" id="gHE-cH-hIG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eac-m3-xLg">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -209,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alarm.fill" catalog="system" width="123" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
