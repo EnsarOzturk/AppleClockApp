@@ -27,6 +27,7 @@ class AlarmListViewController: UIViewController {
             navigationController?.navigationBar.tintColor = UIColor(named: "buttonColor")
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            getAlarmListFromUserDefault()
         }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -43,6 +44,26 @@ class AlarmListViewController: UIViewController {
         addVC.delegate = self
         present(addVC, animated: true)
         
+    }
+    
+    func getAlarmListFromUserDefault() {
+        if let alarmListData = UserDefaults.standard.data(forKey: alarmKey) {
+            do {
+                    let decoder = JSONDecoder()
+
+                    let alarmList = try decoder.decode([Alarm].self, from: alarmListData)
+                self.alarmList = alarmList
+                } catch {
+                    print("Unable to Decode Notes (\(error))")
+            }
+        }
+    }
+    
+    func saveAlarmListToUserDefaults() {
+        let encoder = JSONEncoder()
+        let alarmListData = try? encoder.encode(alarmList)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(alarmListData, forKey: alarmKey)
     }
 }
 
@@ -100,12 +121,14 @@ extension AlarmListViewController: AlarmSaveDelagate {
         let alarm = Alarm(hour: hour, isSwitchOn: true)
         alarmList.append(alarm)
         collectionView.reloadData()
+        saveAlarmListToUserDefaults()
     }
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
     func alarmSwitchValueChanged(isOn: Bool, index: Int) {
         alarmList[index].isSwitchOn = isOn
+        saveAlarmListToUserDefaults()
     }
 }
 
