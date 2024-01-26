@@ -74,6 +74,15 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		FC4C325E2B63D33E00CCBDF1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
+				FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FCC1EA1C2B5061C90001A65A = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +102,7 @@
 		FCC1EA272B5061C90001A65A /* AppleClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C325E2B63D33E00CCBDF1 /* Controllers */,
 				FC4C325D2B63D2E800CCBDF1 /* Module */,
 				FC4C325C2B63D24800CCBDF1 /* Resources */,
 				FC4C32552B611F9600CCBDF1 /* Models */,
@@ -101,8 +111,6 @@
 				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
-				FCC1EA402B5166620001A65A /* AlarmListViewController.swift */,
-				FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */,
 			);
 			path = AppleClockApp;
 			sourceTree = "<group>";
