@@ -28,6 +28,8 @@ class AlarmListViewController: UIViewController {
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             getAlarmListFromUserDefault()
+            configureTabbar()
+            
         }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -64,6 +66,22 @@ class AlarmListViewController: UIViewController {
         let alarmListData = try? encoder.encode(alarmList)
         let userDefaults = UserDefaults.standard
         userDefaults.set(alarmListData, forKey: alarmKey)
+    }
+    
+    private func configureTabbar() {
+        let selectedColor = UIColor(named: "tabbarSelected")
+        let unselectedColor = UIColor(named: "tabbarUnselected")
+        tabBarController?.tabBar.tintColor = selectedColor
+        tabBarController?.tabBar.unselectedItemTintColor = unselectedColor
+        
+        if let items = tabBarController?.tabBar.items {
+            for item in items {
+                item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : unselectedColor], for: .normal)
+                item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : selectedColor], for: .selected)
+                item.selectedImage = UIImage(systemName: "alarm.fill")?.withTintColor(unselectedColor ?? .clear)
+                item.image = UIImage(systemName: "alarm.fill")?.withTintColor(selectedColor ?? .clear)
+            }
+        }
     }
 }
 
