@@ -66,6 +66,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FC4C325D2B63D2E800CCBDF1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA492B5180A40001A65A /* Cells */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		FCC1EA1C2B5061C90001A65A = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +93,9 @@
 		FCC1EA272B5061C90001A65A /* AppleClockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C325D2B63D2E800CCBDF1 /* Module */,
 				FC4C325C2B63D24800CCBDF1 /* Resources */,
 				FC4C32552B611F9600CCBDF1 /* Models */,
-				FCC1EA492B5180A40001A65A /* Cells */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
 				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
