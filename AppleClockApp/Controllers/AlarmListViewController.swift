@@ -11,7 +11,7 @@ class AlarmListViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     var alarmList: [Alarm] = []
     var alarmKey = "NewAlarmList"
-    
+
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -25,14 +25,16 @@ class AlarmListViewController: UIViewController {
             view.backgroundColor = UIColor(named: "tabBarColor")
             navigationController?.navigationBar.backgroundColor = UIColor(named: "tabBarColor")
             navigationController?.navigationBar.tintColor = UIColor(named: "buttonColor")
+            navigationController?.navigationBar.barTintColor = UIColor.black
+        
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             getAlarmListFromUserDefault()
             configureTabbar()
-            
-        }
+    }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
@@ -73,6 +75,8 @@ class AlarmListViewController: UIViewController {
         let unselectedColor = UIColor(named: "tabbarUnselected")
         tabBarController?.tabBar.tintColor = selectedColor
         tabBarController?.tabBar.unselectedItemTintColor = unselectedColor
+        tabBarController?.tabBar.backgroundColor = UIColor.black
+        tabBarController?.tabBar.barTintColor = UIColor.black
         
         if let items = tabBarController?.tabBar.items {
             for item in items {
@@ -118,13 +122,10 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
         var header: AlarmListHeaderCell!
-        
         if kind == UICollectionView.elementKindSectionHeader {
             header =
-            (collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                             withReuseIdentifier: "AlarmListHeaderCell", for: indexPath as IndexPath)
+            (collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmListHeaderCell", for: indexPath as IndexPath)
              as? AlarmListHeaderCell)!
             
             return header

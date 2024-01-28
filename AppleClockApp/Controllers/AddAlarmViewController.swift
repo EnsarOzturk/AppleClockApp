@@ -27,6 +27,11 @@ class AddAlarmViewController: UIViewController {
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
     }
     
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if let hour = addAlarmLabel.text {
             delegate?.alarmSaved(hour: hour)

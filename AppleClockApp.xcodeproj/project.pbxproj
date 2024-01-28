@@ -88,16 +88,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		FC4C325F2B63D38700CCBDF1 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				FC4C325E2B63D33E00CCBDF1 /* Controllers */,
-				FC4C32552B611F9600CCBDF1 /* Models */,
-				FC4C325D2B63D2E800CCBDF1 /* Module */,
-			);
-			path = Api;
-			sourceTree = "<group>";
-		};
 		FC4C32602B63D44800CCBDF1 /* AlarmListHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +122,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FC4C32682B66820000CCBDF1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
+				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		FCC1EA1C2B5061C90001A65A = {
 			isa = PBXGroup;
 			children = (
@@ -152,12 +151,13 @@
 			isa = PBXGroup;
 			children = (
 				FC4C32622B63D4C900CCBDF1 /* Utils */,
-				FC4C325F2B63D38700CCBDF1 /* Api */,
+				FC4C325E2B63D33E00CCBDF1 /* Controllers */,
+				FC4C32552B611F9600CCBDF1 /* Models */,
+				FC4C325D2B63D2E800CCBDF1 /* Module */,
 				FC4C325C2B63D24800CCBDF1 /* Resources */,
+				FC4C32682B66820000CCBDF1 /* Screens */,
 				FCC1EA282B5061C90001A65A /* AppDelegate.swift */,
 				FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */,
-				FCC1EA2E2B5061C90001A65A /* Main.storyboard */,
-				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 				FCC1EA362B5061CC0001A65A /* Info.plist */,
 			);
 			path = AppleClockApp;
