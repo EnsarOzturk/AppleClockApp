@@ -13,6 +13,8 @@
 		FC4C32572B612A4700CCBDF1 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */; };
 		FC4C32652B63D7D300CCBDF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32642B63D7D300CCBDF1 /* UIColor+Extension.swift */; };
 		FC4C32672B63DBDC00CCBDF1 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32662B63DBDC00CCBDF1 /* StopWatchViewController.swift */; };
+		FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */; };
+		FC4C326C2B66950700CCBDF1 /* AddAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */; };
 		FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA282B5061C90001A65A /* AppDelegate.swift */; };
 		FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */; };
 		FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA2E2B5061C90001A65A /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		FC4C32562B612A4700CCBDF1 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		FC4C32642B63D7D300CCBDF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FC4C32662B63DBDC00CCBDF1 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
+		FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewModel.swift; sourceTree = "<group>"; };
+		FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewModel.swift; sourceTree = "<group>"; };
 		FCC1EA252B5061C90001A65A /* AppleClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC1EA282B5061C90001A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 		FCC1EA462B517FB70001A65A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */,
+				FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4C326C2B66950700CCBDF1 /* AddAlarmViewModel.swift in Sources */,
 				FCC1EA412B5166620001A65A /* AlarmListViewController.swift in Sources */,
 				FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */,
 				FC4C32522B611E6F00CCBDF1 /* ClockModel.swift in Sources */,
@@ -268,6 +275,7 @@
 				FC4C324F2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift in Sources */,
 				FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */,
 				FCC1EA3E2B514A9F0001A65A /* AlarmListCell.swift in Sources */,
+				FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */,
 				FC4C32652B63D7D300CCBDF1 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
