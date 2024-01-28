@@ -32,6 +32,15 @@ extension UIColor {
 }
 
 enum AssetsColor: String {
-    case tabbarSelected
-    case tabbarUnselected
+    case tabbarSelectedColor
+    case tabbarUnselectedColor
+    case navigationButtonColor
+    case cellBackgroundColor
+    case cellViewColor
+    case navigationBackgroundColor
+    case numberColor
+    case setButtonColor
+    case setButtonTitleColor
+    case tabbarBackgroundColor
+    case titleColor
 }

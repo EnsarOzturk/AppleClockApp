@@ -24,7 +24,7 @@ class AddAlarmViewController: UIViewController {
         
     }
     private func changeDatePickerTextColor() {
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.setValue(UIColor(name: .titleColor), forKeyPath: "textColor")
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {

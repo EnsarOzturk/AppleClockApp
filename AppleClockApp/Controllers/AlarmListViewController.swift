@@ -22,13 +22,12 @@ class AlarmListViewController: UIViewController {
             collectionView.register(UINib(nibName: "AlarmListCell", bundle: nil), forCellWithReuseIdentifier: "AlarmListCell")
             collectionView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "AlarmListHeaderCell")
             collectionView.backgroundColor = UIColor(named: "tabBarColor")
-            view.backgroundColor = UIColor(named: "tabBarColor")
-            navigationController?.navigationBar.backgroundColor = UIColor(named: "tabBarColor")
-            navigationController?.navigationBar.tintColor = UIColor(named: "buttonColor")
-            navigationController?.navigationBar.barTintColor = UIColor.black
-        
-            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
-            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            view.backgroundColor = UIColor(name: .cellBackgroundColor)
+            navigationController?.navigationBar.backgroundColor = UIColor(name: .navigationBackgroundColor)
+            navigationController?.navigationBar.tintColor = UIColor(name: .navigationButtonColor)
+            navigationController?.navigationBar.barTintColor = UIColor(name: .navigationBackgroundColor)
+            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(name: .titleColor)]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(name: .titleColor)]
             getAlarmListFromUserDefault()
             configureTabbar()
     }
@@ -71,19 +70,19 @@ class AlarmListViewController: UIViewController {
     }
     
     private func configureTabbar() {
-        let selectedColor = UIColor(named: "tabbarSelected")
-        let unselectedColor = UIColor(named: "tabbarUnselected")
-        tabBarController?.tabBar.tintColor = selectedColor
-        tabBarController?.tabBar.unselectedItemTintColor = unselectedColor
-        tabBarController?.tabBar.backgroundColor = UIColor.black
-        tabBarController?.tabBar.barTintColor = UIColor.black
+        let selectedColor = UIColor(name: .tabbarSelectedColor)
+        let unselectedColor = UIColor(name: .tabbarUnselectedColor)
+        tabBarController?.tabBar.tintColor = UIColor(name: .tabbarSelectedColor)
+        tabBarController?.tabBar.unselectedItemTintColor =  UIColor(name: .tabbarUnselectedColor)
+        tabBarController?.tabBar.backgroundColor = UIColor(name: .tabbarBackgroundColor)
+        tabBarController?.tabBar.barTintColor = UIColor(name: .tabbarBackgroundColor)
         
         if let items = tabBarController?.tabBar.items {
             for item in items {
                 item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : unselectedColor], for: .normal)
                 item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : selectedColor], for: .selected)
-                item.selectedImage = UIImage(systemName: "alarm.fill")?.withTintColor(unselectedColor ?? .clear)
-                item.image = UIImage(systemName: "alarm.fill")?.withTintColor(selectedColor ?? .clear)
+                item.selectedImage = UIImage(systemName: "alarm.fill")?.withTintColor(unselectedColor)
+                item.image = UIImage(systemName: "alarm.fill")?.withTintColor(selectedColor)
             }
         }
     }

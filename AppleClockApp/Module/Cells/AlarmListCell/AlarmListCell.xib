@@ -72,6 +72,7 @@
             <connections>
                 <outlet property="alarmClockLabel" destination="42M-wa-z6S" id="ZpN-wd-aXk"/>
                 <outlet property="alarmSwitch" destination="PxV-D8-BG0" id="8ZK-dF-qKe"/>
+                <outlet property="view" destination="CYo-01-Akw" id="dpd-s8-peo"/>
             </connections>
             <point key="canvasLocation" x="174.04580152671755" y="35.91549295774648"/>
         </collectionViewCell>

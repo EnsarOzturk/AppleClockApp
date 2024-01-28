@@ -12,9 +12,9 @@ class AlarmListHeaderCell: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setButton.backgroundColor = UIColor(named: "setButton")
+        setButton.backgroundColor = UIColor(name: .setButtonColor)
         setButton.layer.cornerRadius = 16.0
-        setButton.titleLabel?.textColor = UIColor(named: "setButtonTitle")
+        setButton.titleLabel?.textColor = UIColor(name: .setButtonTitleColor)
       
     }
     
