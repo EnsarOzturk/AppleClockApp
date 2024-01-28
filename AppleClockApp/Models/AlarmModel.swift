@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AlarmModel: Codable {
+struct Alarm: Codable {
     var hour: String
     var isSwitchOn: Bool
 }

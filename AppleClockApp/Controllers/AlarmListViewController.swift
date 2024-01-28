@@ -150,9 +150,6 @@ extension AlarmListViewController: AlarmCellDelegate {
     }
 }
 
-struct Alarm: Codable {
-    var hour: String
-    var isSwitchOn: Bool
-}
+
 
 
