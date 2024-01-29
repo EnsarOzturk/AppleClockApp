@@ -17,6 +17,7 @@ class AddAlarmViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var addAlarmLabel: UILabel!
     weak var delegate : AlarmSaveDelagate?
+    var viewModel: AddAlarmViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
