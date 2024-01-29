@@ -135,7 +135,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
-extension AlarmListViewController: AlarmSaveDelagate {
+extension AlarmListViewController: AlarmSaveDelegate {
     func alarmSaved(hour: String) {
         let alarm = Alarm(hour: hour, isSwitchOn: true)
         alarmList.append(alarm)

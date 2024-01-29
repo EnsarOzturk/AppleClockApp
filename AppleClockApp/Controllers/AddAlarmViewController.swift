@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AlarmSaveDelagate: AnyObject {
+protocol AlarmSaveDelegate: AnyObject {
     func alarmSaved(hour: String)
 }
 
@@ -16,35 +16,26 @@ class AddAlarmViewController: UIViewController {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var addAlarmLabel: UILabel!
-    weak var delegate : AlarmSaveDelagate?
-    var viewModel: AddAlarmViewModel!
+    weak var delegate : AlarmSaveDelegate?
+    var viewModel: AddAlarmViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeDatePickerTextColor()
+        viewModel = AddAlarmViewModel(datePicker: datePicker)
+        viewModel.setDatePicker(datePicker)
+        viewModel.changeDatePickerTextColor(datePicker: datePicker)
         
     }
-    private func changeDatePickerTextColor() {
-        datePicker.setValue(UIColor(name: .titleColor), forKeyPath: "textColor")
-    }
-    
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true)
+        viewModel.cancelButtonTapped(alarmListViewController: self)
     }
-    
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        if let hour = addAlarmLabel.text {
-            delegate?.alarmSaved(hour: hour)
-            self.dismiss(animated: true)
-        }
+        viewModel.saveButtonTapped(hour: addAlarmLabel.text ?? "", delegate: delegate!)
+        self.dismiss(animated: true)
     }
     
     @IBAction func datePickerValueChange(_ sender: UIDatePicker) {
-        let dateFormater = DateFormatter()
-        dateFormater.dateStyle = .medium
-        dateFormater.timeStyle = .short
-        dateFormater.dateFormat = "HH:mm"
-        addAlarmLabel.text = dateFormater.string(from: datePicker.date)
+        viewModel.datePickerValueChanged(datePicker: sender, label: addAlarmLabel)
     }
 }
