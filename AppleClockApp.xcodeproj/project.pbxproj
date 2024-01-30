@@ -16,6 +16,7 @@
 		FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */; };
 		FC4C326C2B66950700CCBDF1 /* AddAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */; };
 		FC4C32712B67DE2100CCBDF1 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32702B67DE2100CCBDF1 /* UINavigationController+Extension.swift */; };
+		FC4C32732B69706500CCBDF1 /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32722B69706500CCBDF1 /* UITabBarController+Extension.swift */; };
 		FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA282B5061C90001A65A /* AppDelegate.swift */; };
 		FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */; };
 		FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA2E2B5061C90001A65A /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewModel.swift; sourceTree = "<group>"; };
 		FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewModel.swift; sourceTree = "<group>"; };
 		FC4C32702B67DE2100CCBDF1 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		FC4C32722B69706500CCBDF1 /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		FCC1EA252B5061C90001A65A /* AppleClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC1EA282B5061C90001A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				FC4C32642B63D7D300CCBDF1 /* UIColor+Extension.swift */,
 				FC4C32702B67DE2100CCBDF1 /* UINavigationController+Extension.swift */,
+				FC4C32722B69706500CCBDF1 /* UITabBarController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				FC4C32672B63DBDC00CCBDF1 /* StopWatchViewController.swift in Sources */,
 				FC4C324F2B60FFE400CCBDF1 /* AlarmListHeaderCell.swift in Sources */,
 				FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */,
+				FC4C32732B69706500CCBDF1 /* UITabBarController+Extension.swift in Sources */,
 				FCC1EA3E2B514A9F0001A65A /* AlarmListCell.swift in Sources */,
 				FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */,
 				FC4C32652B63D7D300CCBDF1 /* UIColor+Extension.swift in Sources */,

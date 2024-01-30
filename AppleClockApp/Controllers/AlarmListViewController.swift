@@ -13,10 +13,12 @@ class AlarmListViewController: UIViewController {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            configureCollectionView()
-            navigationController?.setupNavigation()
-            configureTabbar()
             viewModel = AlarmListViewModel(delegate: self)
+            view.backgroundColor = UIColor(name: .cellBackgroundColor)
+            navigationController?.setupNavigation()
+            configureCollectionView()
+            configureTabbar()
+            
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {

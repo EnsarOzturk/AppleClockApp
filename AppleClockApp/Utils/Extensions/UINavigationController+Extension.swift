@@ -16,7 +16,6 @@ extension UINavigationController {
     private func configureNavigation() {
         self.title = "Alarms"
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = UIColor(name: .cellBackgroundColor)
         navigationController?.navigationBar.backgroundColor = UIColor(name: .navigationBackgroundColor)
         navigationController?.navigationBar.tintColor = UIColor(name: .navigationButtonColor)
         navigationController?.navigationBar.barTintColor = UIColor(name: .navigationBackgroundColor)
