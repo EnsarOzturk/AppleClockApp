@@ -16,9 +16,8 @@ class AlarmListViewController: UIViewController {
             viewModel = AlarmListViewModel(delegate: self)
             view.backgroundColor = UIColor(name: .cellBackgroundColor)
             navigationController?.setupNavigation()
+            tabBarController?.setupTabbar()
             configureCollectionView()
-            configureTabbar()
-            
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -26,17 +25,9 @@ class AlarmListViewController: UIViewController {
     }
     
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
-        addAlarmFunc()
-    }
-    
-    func addAlarmFunc() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let addVC = storyboard.instantiateViewController(identifier: "AddAlarmViewController") as! AddAlarmViewController
-        addVC.modalPresentationStyle = .popover
-        addVC.modalTransitionStyle = .coverVertical
-        addVC.delegate = self
+        viewModel.delegate = self
+        let addVC = viewModel.prepareAddAlarm()
         present(addVC, animated: true)
-        
     }
     
     private func configureCollectionView() {
@@ -45,24 +36,6 @@ class AlarmListViewController: UIViewController {
         collectionView.register(UINib(nibName: "AlarmListCell", bundle: nil), forCellWithReuseIdentifier: "AlarmListCell")
         collectionView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "AlarmListHeaderCell")
         collectionView.backgroundColor = UIColor(named: "tabBarColor")
-    }
-    
-    private func configureTabbar() {
-        let selectedColor = UIColor(name: .tabbarSelectedColor)
-        let unselectedColor = UIColor(name: .tabbarUnselectedColor)
-        tabBarController?.tabBar.tintColor = UIColor(name: .tabbarSelectedColor)
-        tabBarController?.tabBar.unselectedItemTintColor =  UIColor(name: .tabbarUnselectedColor)
-        tabBarController?.tabBar.backgroundColor = UIColor(name: .tabbarBackgroundColor)
-        tabBarController?.tabBar.barTintColor = UIColor(name: .tabbarBackgroundColor)
-        
-        if let items = tabBarController?.tabBar.items {
-            for item in items {
-                item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : unselectedColor], for: .normal)
-                item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : selectedColor], for: .selected)
-                item.selectedImage = UIImage(systemName: "alarm.fill")?.withTintColor(unselectedColor)
-                item.image = UIImage(systemName: "alarm.fill")?.withTintColor(selectedColor)
-            }
-        }
     }
 }
 
@@ -74,7 +47,6 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmListCell", for: indexPath) as! AlarmListCell
-        
         let alarm = viewModel.alarmList[indexPath.row]
         cell.index = indexPath.row
         cell.delegate = self

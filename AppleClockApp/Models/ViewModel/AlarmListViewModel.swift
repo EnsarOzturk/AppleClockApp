@@ -6,27 +6,38 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AlarmListViewModelDelegate: AnyObject {
     func updateCollectionView()
 }
 
 class AlarmListViewModel {
-    weak var delegate: AlarmListViewModelDelegate?
+    weak var viewModelDelegate: AlarmListViewModelDelegate?
+    weak var delegate : AlarmSaveDelegate?
     var alarmList: [Alarm] = []
     var alarmKey = "NewAlarmList"
 
     init(delegate: AlarmListViewModelDelegate) {
-        self.delegate = delegate
+        self.viewModelDelegate = delegate
         getAlarmListFromUserDefaults()
     }
     
     func addAlarm(hour: String) {
            let alarm = Alarm(hour: hour, isSwitchOn: true)
            alarmList.append(alarm)
-           delegate?.updateCollectionView()
+           viewModelDelegate?.updateCollectionView()
            saveAlarmListToUserDefaults()
        }
+    
+    func prepareAddAlarm() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let addVC = storyboard.instantiateViewController(identifier: "AddAlarmViewController") as! AddAlarmViewController
+        addVC.modalPresentationStyle = .popover
+        addVC.modalTransitionStyle = .coverVertical
+        addVC.delegate = delegate
+        return addVC
+    }
     
     func toggleSwitch(isOn: Bool, index: Int) {
            alarmList[index].isSwitchOn = isOn
@@ -39,7 +50,7 @@ class AlarmListViewModel {
                 let decoder = JSONDecoder()
                 let alarmList = try decoder.decode([Alarm].self, from: alarmListData)
                 self.alarmList = alarmList
-                delegate?.updateCollectionView()
+                viewModelDelegate?.updateCollectionView()
             } catch {
                 print("Unable to Decode Notes (\(error))")
             }
