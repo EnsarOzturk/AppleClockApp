@@ -7,19 +7,41 @@
 
 import Foundation
 
+protocol AlarmListViewModelDelegate: AnyObject {
+    func updateCollectionView()
+}
+
 class AlarmListViewModel {
+    weak var delegate: AlarmListViewModelDelegate?
     var alarmList: [Alarm] = []
     var alarmKey = "NewAlarmList"
+
+    init(delegate: AlarmListViewModelDelegate) {
+        self.delegate = delegate
+        getAlarmListFromUserDefaults()
+    }
     
-    func getAlarmListFromUserDefault() {
+    func addAlarm(hour: String) {
+           let alarm = Alarm(hour: hour, isSwitchOn: true)
+           alarmList.append(alarm)
+           delegate?.updateCollectionView()
+           saveAlarmListToUserDefaults()
+       }
+    
+    func toggleSwitch(isOn: Bool, index: Int) {
+           alarmList[index].isSwitchOn = isOn
+           saveAlarmListToUserDefaults()
+       }
+    
+    func getAlarmListFromUserDefaults() {
         if let alarmListData = UserDefaults.standard.data(forKey: alarmKey) {
             do {
-                    let decoder = JSONDecoder()
-
-                    let alarmList = try decoder.decode([Alarm].self, from: alarmListData)
+                let decoder = JSONDecoder()
+                let alarmList = try decoder.decode([Alarm].self, from: alarmListData)
                 self.alarmList = alarmList
-                } catch {
-                    print("Unable to Decode Notes (\(error))")
+                delegate?.updateCollectionView()
+            } catch {
+                print("Unable to Decode Notes (\(error))")
             }
         }
     }
@@ -30,5 +52,5 @@ class AlarmListViewModel {
         let userDefaults = UserDefaults.standard
         userDefaults.set(alarmListData, forKey: alarmKey)
     }
-
 }
+
