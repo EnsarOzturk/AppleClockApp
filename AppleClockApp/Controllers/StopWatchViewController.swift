@@ -12,9 +12,11 @@ class StopWatchViewController: UIViewController {
     @IBOutlet var roundButton: UIButton!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var stopWatchView: UIView!
+    @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(name: .cellBackgroundColor)
         roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
         roundButton.backgroundColor = UIColor(name: .roundButtonColor)

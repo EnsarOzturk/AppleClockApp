@@ -75,24 +75,40 @@
                                     <constraint firstAttribute="height" constant="1" id="xsu-eP-gBs"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tte-DS-nEk">
+                                <rect key="frame" x="16" y="436" width="361" height="333"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91S-dg-yyT">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nch-wy-Ip9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Tte-DS-nEk" firstAttribute="top" secondItem="YEn-7p-y8U" secondAttribute="bottom" id="2M2-6z-fjt"/>
                             <constraint firstItem="h7c-WD-OLF" firstAttribute="top" secondItem="nch-wy-Ip9" secondAttribute="top" constant="100" id="9ID-Sm-sQE"/>
                             <constraint firstItem="YEn-7p-y8U" firstAttribute="top" secondItem="TF7-Fw-KN6" secondAttribute="bottom" constant="16" id="Hg0-wz-L9d"/>
                             <constraint firstItem="h7c-WD-OLF" firstAttribute="leading" secondItem="nch-wy-Ip9" secondAttribute="leading" constant="8" id="Jzu-g5-ZZ4"/>
                             <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="xDN-jp-fAm" secondAttribute="trailing" constant="16" id="SiL-Gp-hMY"/>
                             <constraint firstItem="YEn-7p-y8U" firstAttribute="leading" secondItem="mRh-1t-IiJ" secondAttribute="leading" constant="16" id="V4c-mO-evL"/>
+                            <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="Tte-DS-nEk" secondAttribute="trailing" constant="16" id="WnQ-vR-jFm"/>
+                            <constraint firstItem="Tte-DS-nEk" firstAttribute="bottom" secondItem="nch-wy-Ip9" secondAttribute="bottom" id="YpG-4t-FQt"/>
                             <constraint firstAttribute="trailing" secondItem="YEn-7p-y8U" secondAttribute="trailing" constant="16" id="c3C-YD-Q03"/>
                             <constraint firstItem="xDN-jp-fAm" firstAttribute="top" secondItem="h7c-WD-OLF" secondAttribute="bottom" constant="80" id="dtU-Gi-vMh"/>
                             <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="h7c-WD-OLF" secondAttribute="trailing" constant="8" id="egf-qc-ssH"/>
+                            <constraint firstItem="Tte-DS-nEk" firstAttribute="leading" secondItem="nch-wy-Ip9" secondAttribute="leading" constant="16" id="lxE-Em-zuD"/>
                             <constraint firstItem="TF7-Fw-KN6" firstAttribute="leading" secondItem="nch-wy-Ip9" secondAttribute="leading" constant="16" id="qGi-6p-h1V"/>
                             <constraint firstItem="TF7-Fw-KN6" firstAttribute="top" secondItem="h7c-WD-OLF" secondAttribute="bottom" constant="80" id="qSy-R9-xo9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch.fill" catalog="system" id="XoR-lH-TXA"/>
                     <connections>
+                        <outlet property="collectionView" destination="Tte-DS-nEk" id="Ebj-rD-Jnv"/>
                         <outlet property="roundButton" destination="TF7-Fw-KN6" id="mAm-cm-ere"/>
                         <outlet property="startButton" destination="xDN-jp-fAm" id="Y06-MZ-Z44"/>
                         <outlet property="stopWatchLabel" destination="h7c-WD-OLF" id="La5-KK-nFz"/>
