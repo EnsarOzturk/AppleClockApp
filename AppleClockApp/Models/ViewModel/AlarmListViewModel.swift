@@ -44,6 +44,14 @@ class AlarmListViewModel {
            saveAlarmListToUserDefaults()
        }
     
+    func deleteAlarm(at index: Int) {
+        guard index < alarmList.count else {
+            return
+        }
+        alarmList.remove(at: index)
+        saveAlarmListToUserDefaults()
+    }
+    
     func getAlarmListFromUserDefaults() {
         if let alarmListData = UserDefaults.standard.data(forKey: alarmKey) {
             do {

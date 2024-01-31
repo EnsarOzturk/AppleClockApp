@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42M-wa-z6S">
-                        <rect key="frame" x="8" y="16" width="227" height="35"/>
+                        <rect key="frame" x="28" y="16" width="207" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="86B-cx-bcM"/>
                         </constraints>
@@ -35,7 +36,7 @@
                         </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYW-tL-BCx">
-                        <rect key="frame" x="8" y="67" width="292" height="20"/>
+                        <rect key="frame" x="28" y="67" width="272" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="5gG-ed-sOb"/>
                         </constraints>
@@ -50,34 +51,54 @@
                             <constraint firstAttribute="height" constant="1" id="3aZ-II-bFS"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA4-VZ-tqP">
+                        <rect key="frame" x="4" y="40" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="huc-Kd-Xyp"/>
+                            <constraint firstAttribute="width" constant="16" id="wj7-Yl-Tdz"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="minus" catalog="system" symbolScale="small"/>
+                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="trashButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nf0-pt-aio"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="WYW-tL-BCx" secondAttribute="bottom" constant="8" symbolic="YES" id="1Qn-FW-Xja"/>
-                <constraint firstItem="42M-wa-z6S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="B5j-Ca-0QP"/>
+                <constraint firstItem="sA4-VZ-tqP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="40" id="AJO-DY-tm6"/>
                 <constraint firstItem="42M-wa-z6S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="DF0-U4-GSo"/>
                 <constraint firstItem="PxV-D8-BG0" firstAttribute="leading" secondItem="42M-wa-z6S" secondAttribute="trailing" constant="16" id="DVD-JF-KVo"/>
                 <constraint firstItem="WYW-tL-BCx" firstAttribute="top" secondItem="PxV-D8-BG0" secondAttribute="bottom" constant="8" symbolic="YES" id="EcN-Mv-h86"/>
+                <constraint firstItem="42M-wa-z6S" firstAttribute="leading" secondItem="sA4-VZ-tqP" secondAttribute="trailing" constant="8" id="Rmo-9U-s68"/>
                 <constraint firstAttribute="trailing" secondItem="PxV-D8-BG0" secondAttribute="trailing" constant="16" id="SF5-x0-hxa"/>
                 <constraint firstItem="CYo-01-Akw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="SSQ-w9-CXp"/>
                 <constraint firstAttribute="bottom" secondItem="CYo-01-Akw" secondAttribute="bottom" id="WcC-wl-rU8"/>
+                <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="sA4-VZ-tqP" secondAttribute="bottom" constant="39" id="ZG6-aF-Gsd"/>
                 <constraint firstItem="PxV-D8-BG0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="28" id="b2e-SU-Tib"/>
                 <constraint firstAttribute="trailing" secondItem="WYW-tL-BCx" secondAttribute="trailing" constant="16" id="f2i-q5-ncm"/>
                 <constraint firstAttribute="trailing" secondItem="CYo-01-Akw" secondAttribute="trailing" constant="8" id="nC0-gf-fcq"/>
-                <constraint firstItem="WYW-tL-BCx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="qwC-TQ-yku"/>
+                <constraint firstItem="WYW-tL-BCx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="28" id="nC1-Kx-OTz"/>
+                <constraint firstItem="sA4-VZ-tqP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="vFl-Zy-gLn"/>
             </constraints>
             <size key="customSize" width="316" height="97"/>
             <connections>
                 <outlet property="alarmClockLabel" destination="42M-wa-z6S" id="ZpN-wd-aXk"/>
                 <outlet property="alarmSwitch" destination="PxV-D8-BG0" id="8ZK-dF-qKe"/>
-                <outlet property="view" destination="CYo-01-Akw" id="dpd-s8-peo"/>
+                <outlet property="trashButton" destination="sA4-VZ-tqP" id="mAc-E7-jTU"/>
+                <outlet property="view" destination="CYo-01-Akw" id="BkD-xp-dFk"/>
             </connections>
             <point key="canvasLocation" x="174.04580152671755" y="35.91549295774648"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="minus" catalog="system" width="128" height="26"/>
         <namedColor name="viewColor">
             <color red="0.1961210072" green="0.19585859780000001" blue="0.2078448534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

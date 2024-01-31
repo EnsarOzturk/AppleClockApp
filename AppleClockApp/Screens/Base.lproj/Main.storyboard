@@ -73,19 +73,35 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNU-ql-0dd">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zPq-or-Csu">
                             <connections>
-                                <action selector="alarmEditButtonTapped:" destination="BYZ-38-t0r" id="jOu-A0-PPU"/>
+                                <action selector="alarmEditButtonTapped:" destination="BYZ-38-t0r" id="t8I-Bn-HuN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY">
-                            <connections>
-                                <action selector="addAlarmToggleButtonTapped:" destination="BYZ-38-t0r" id="wWy-Cu-zvk"/>
-                            </connections>
-                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ock-sA-Sgb">
+                            <rect key="frame" x="184.66666666666666" y="15" width="24" height="14"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                        </button>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="VJC-dh-kjY">
+                                <connections>
+                                    <action selector="addAlarmToggleButtonTapped:" destination="BYZ-38-t0r" id="wWy-Cu-zvk"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="z3i-T2-eQb">
+                                <connections>
+                                    <action selector="deleteButton:" destination="BYZ-38-t0r" id="avS-rn-2kB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
+                        <outlet property="deleteButton" destination="z3i-T2-eQb" id="Sqd-rI-q4l"/>
+                        <outlet property="editButton" destination="zPq-or-Csu" id="DQc-xR-9Yz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
