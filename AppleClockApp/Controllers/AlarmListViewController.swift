@@ -78,7 +78,7 @@ class AlarmListViewController: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: Any) {
         deleteSelectedAlarms()
     }
-    
+
     
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
         viewModel.delegate = self

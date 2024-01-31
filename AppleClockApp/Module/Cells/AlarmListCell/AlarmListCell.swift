@@ -18,6 +18,7 @@ class AlarmListCell: UICollectionViewCell {
     @IBOutlet var alarmSwitch: UISwitch!
     @IBOutlet var view: UIView!
     @IBOutlet var trashButton: UIButton!
+    @IBOutlet var editingButton: UIButton!
     
     weak var delegate : AlarmCellDelegate?
     var index: Int = 0
@@ -49,5 +50,8 @@ class AlarmListCell: UICollectionViewCell {
     @IBAction func trashButtonTapped(_ sender: UIButton) {
         delegate?.trashButtonTapped(index: index)
         
+    }
+    
+    @IBAction func editingButtonTapped(_ sender: UIButton) {
     }
 }

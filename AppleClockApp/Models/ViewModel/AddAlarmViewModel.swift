@@ -31,8 +31,7 @@ class AddAlarmViewModel: AddAlarmViewModelProtocol {
       }
     
     func saveButtonTapped(hour: String, delegate: AlarmSaveDelegate) {
-           delegate.alarmSaved(hour: hour)
-        
+          delegate.alarmSaved(hour: hour)
        }
     
     func cancelButtonTapped(alarmListViewController: UIViewController) {
