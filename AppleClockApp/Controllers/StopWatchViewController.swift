@@ -8,22 +8,21 @@
 import UIKit
 
 class StopWatchViewController: UIViewController {
-
+    @IBOutlet var stopWatchLabel: UILabel!
+    @IBOutlet var roundButton: UIButton!
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopWatchView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(name: .cellBackgroundColor)
+        roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
+        roundButton.backgroundColor = UIColor(name: .roundButtonColor)
+        roundButton.titleLabel?.textColor = UIColor(name: .roundButtonTitleColor)
+        startButton.backgroundColor = UIColor(name: .startButtonColor)
+        startButton.titleLabel?.textColor = UIColor(name: .startButtonTitleColor)
+        startButton.layer.cornerRadius = 0.5 * startButton.bounds.size.width
+        stopWatchLabel.textColor = UIColor(name: .titleColor)
+        stopWatchView.backgroundColor = UIColor(name: .stopWatchViewColor)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

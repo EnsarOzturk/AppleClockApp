@@ -177,6 +177,17 @@ extension AlarmListViewController: AlarmSaveDelegate {
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
+    func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool) {
+           guard let alarmTime = alarmTime else {
+               return
+           }
+
+           let alarmVC = AlarmViewController()
+           alarmVC.alarmTime = alarmTime
+           alarmVC.isAlarmOn = isAlarmOn
+           present(alarmVC, animated: true, completion: nil)
+       }
+    
     func trashButtonTapped(index: Int) {
         if isEditingMode {
                 if let selectedIndexPath = collectionView.indexPathsForSelectedItems, selectedIndexPath.contains(IndexPath(row: index, section: 0)) {

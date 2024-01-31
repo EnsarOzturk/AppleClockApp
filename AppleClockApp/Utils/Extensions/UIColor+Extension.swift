@@ -43,4 +43,9 @@ enum AssetsColor: String {
     case setButtonTitleColor
     case tabbarBackgroundColor
     case titleColor
+    case roundButtonColor
+    case roundButtonTitleColor
+    case startButtonColor
+    case startButtonTitleColor
+    case stopWatchViewColor
 }

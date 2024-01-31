@@ -11,6 +11,7 @@ protocol AlarmCellDelegate : AnyObject {
     func alarmSwitchValueChanged(isOn: Bool, index: Int)
     func trashButtonTapped(index: Int)
     func updateTrashButtonAppearance()
+    func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool)
 }
 
 class AlarmListCell: UICollectionViewCell {
@@ -33,8 +34,8 @@ class AlarmListCell: UICollectionViewCell {
         super.layoutSubviews()
         view.backgroundColor = UIColor(name: .cellViewColor)
         alarmClockLabel.textColor = UIColor(name: .titleColor)
-        trashButton.layer.cornerRadius = 21
-        trashButton.clipsToBounds = true
+        trashButton.layer.cornerRadius = 0.5 * trashButton.bounds.size.width
+        trashButton.clipsToBounds = false
     }
     
       func updateTrashButtonAppearance() {
@@ -53,5 +54,6 @@ class AlarmListCell: UICollectionViewCell {
     }
     
     @IBAction func editingButtonTapped(_ sender: UIButton) {
+        delegate?.editingButtonTapped(index: index, alarmTime: alarmClockLabel.text, isAlarmOn: alarmSwitch.isOn)
     }
 }
