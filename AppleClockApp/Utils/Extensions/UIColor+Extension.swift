@@ -48,4 +48,6 @@ enum AssetsColor: String {
     case startButtonColor
     case startButtonTitleColor
     case stopWatchViewColor
+    case stopButtonColor
+    case stopButtonTitleColor
 }

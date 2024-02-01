@@ -18,9 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="369" height="52"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q7-6t-tuo">
-                        <rect key="frame" x="0.0" y="8" width="369" height="35"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q7-6t-tuo">
+                        <rect key="frame" x="16" y="8" width="337" height="35"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -35,15 +35,19 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9q7-6t-tuo" secondAttribute="trailing" id="cD6-Pz-Hus"/>
+                <constraint firstAttribute="trailing" secondItem="9q7-6t-tuo" secondAttribute="trailing" constant="16" id="cD6-Pz-Hus"/>
                 <constraint firstItem="Uxn-18-t1Y" firstAttribute="top" secondItem="9q7-6t-tuo" secondAttribute="bottom" constant="8" symbolic="YES" id="ciI-QI-5DB"/>
                 <constraint firstAttribute="bottom" secondItem="Uxn-18-t1Y" secondAttribute="bottom" id="dB7-Xv-gNO"/>
                 <constraint firstItem="9q7-6t-tuo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="dHG-tB-6sR"/>
                 <constraint firstAttribute="trailing" secondItem="Uxn-18-t1Y" secondAttribute="trailing" id="hki-7g-m1R"/>
-                <constraint firstItem="9q7-6t-tuo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lLd-R2-pHg"/>
+                <constraint firstItem="9q7-6t-tuo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="lLd-R2-pHg"/>
                 <constraint firstItem="Uxn-18-t1Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yBP-25-JUL"/>
             </constraints>
             <size key="customSize" width="369" height="57"/>
+            <connections>
+                <outlet property="roundLabel" destination="9q7-6t-tuo" id="zBX-yT-dg4"/>
+                <outlet property="view" destination="Uxn-18-t1Y" id="G7D-RX-vt4"/>
+            </connections>
             <point key="canvasLocation" x="382.44274809160305" y="22.535211267605636"/>
         </collectionViewCell>
     </objects>
