@@ -26,5 +26,14 @@ class StopWatchViewController: UIViewController {
         startButton.layer.cornerRadius = 0.5 * startButton.bounds.size.width
         stopWatchLabel.textColor = UIColor(name: .titleColor)
         stopWatchView.backgroundColor = UIColor(name: .stopWatchViewColor)
+        collectionView.backgroundColor = .white
+    }
+    
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+   
+    }
+    
+    @IBAction func roundButtonTapped(_ sender: UIButton) {
+        
     }
 }
