@@ -8,7 +8,7 @@
 import UIKit
 
 class AlarmListViewController: UIViewController {
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var editButton: UIBarButtonItem!
     
     var viewModel: AlarmListViewModel!
@@ -22,11 +22,14 @@ class AlarmListViewController: UIViewController {
             //navigationController?.setupNavigation()
             //tabBarController?.setupTabbar()
             configureTabbar()
-            configureCollectionView()
+            configureTableView()
             configureNavigation()
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
+        isEditingMode.toggle()
+        tableView.setEditing(!tableView.isEditing, animated: true)
+
     }
 
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
@@ -63,56 +66,64 @@ class AlarmListViewController: UIViewController {
         }
     }
     
-    private func configureCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "AlarmListCell", bundle: nil), forCellWithReuseIdentifier: "AlarmListCell")
-        collectionView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "AlarmListHeaderCell")
-        collectionView.backgroundColor = UIColor(named: "tabBarColor")
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "AlarmListCell", bundle: nil), forCellReuseIdentifier: "AlarmListCell")
+        tableView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forCellReuseIdentifier: "AlarmListHeaderCell")
+        tableView.backgroundColor = UIColor(name: .cellBackgroundColor)
     }
 }
 
-extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.alarmList.count
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmListCell", 
-                                                      for: indexPath) as! AlarmListCell
-        let alarm = viewModel.alarmList[indexPath.row]
-        cell.index = indexPath.row
-        cell.delegate = self
-        cell.alarmClockLabel.text = alarm.hour
-        cell.alarmSwitch.isOn = alarm.isSwitchOn
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 110)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 150)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        var header: AlarmListHeaderCell!
-        if kind == UICollectionView.elementKindSectionHeader {
-            header =
-            (collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmListHeaderCell", 
-                                                             for: indexPath as IndexPath) as? AlarmListHeaderCell)!
-            return header
-        }else {
-            return UICollectionReusableView()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmListHeaderCell", for: indexPath) as! AlarmListHeaderCell
+            cell.backgroundColor = UIColor(name: .cellBackgroundColor)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmListCell", for: indexPath) as! AlarmListCell
+            let alarm = viewModel.alarmList[indexPath.row]
+            cell.index = indexPath.row
+            cell.delegate = self
+            cell.alarmClockLabel.text = alarm.hour
+            cell.alarmSwitch.isOn = alarm.isSwitchOn
+            cell.backgroundColor = UIColor(name: .cellBackgroundColor)
+            return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.alarmList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row != 0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+           guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "AlarmListHeaderCell") as? AlarmListHeaderCell else {
+               return nil
+           }
+        header.backgroundColor = UIColor(name: .cellBackgroundColor)
+           return header
+       }
 }
 
 extension AlarmListViewController: AlarmSaveDelegate {
@@ -122,8 +133,6 @@ extension AlarmListViewController: AlarmSaveDelegate {
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
-
-
     func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool) {
            guard let alarmTime = alarmTime else {
                return
@@ -140,8 +149,8 @@ extension AlarmListViewController: AlarmCellDelegate {
 }
 
 extension AlarmListViewController: AlarmListViewModelDelegate {
-    func updateCollectionView() {
-        collectionView.reloadData()
+    func updateTableView() {
+        tableView.reloadData()
     }
 }
 

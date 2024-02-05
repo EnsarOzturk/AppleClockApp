@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AlarmListViewModelDelegate: AnyObject {
-    func updateCollectionView()
+    func updateTableView()
 }
 
 class AlarmListViewModel {
@@ -26,19 +26,9 @@ class AlarmListViewModel {
     func addAlarm(hour: String) {
            let alarm = Alarm(hour: hour, isSwitchOn: true)
            alarmList.append(alarm)
-           viewModelDelegate?.updateCollectionView()
+           viewModelDelegate?.updateTableView()
            saveAlarmListToUserDefaults()
        }
-    
-    func deleteAlarms(at indexes: [Int]) {
-        // Seçilen hücrelerin index'lerini al
-            let sortedIndexes = indexes.sorted(by: >)
-            
-            // ViewModel'de bulunan deleteAlarm fonksiyonunu kullanarak seçili alarmları sil
-            for index in sortedIndexes {
-                deleteAlarm(at: index)
-            }
-    }
     
     func prepareAddAlarm() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -52,14 +42,6 @@ class AlarmListViewModel {
     func toggleSwitch(isOn: Bool, index: Int) {
            alarmList[index].isSwitchOn = isOn
            saveAlarmListToUserDefaults()
-       }
-    
-    func deleteAlarm(at index: Int) {
-        guard index < alarmList.count else {
-            return
-        }
-        alarmList.remove(at: index)
-        saveAlarmListToUserDefaults()
     }
     
     func getAlarmListFromUserDefaults() {
@@ -68,7 +50,7 @@ class AlarmListViewModel {
                 let decoder = JSONDecoder()
                 let alarmList = try decoder.decode([Alarm].self, from: alarmListData)
                 self.alarmList = alarmList
-                viewModelDelegate?.updateCollectionView()
+                viewModelDelegate?.updateTableView()
             } catch {
                 print("Unable to Decode Notes (\(error))")
             }

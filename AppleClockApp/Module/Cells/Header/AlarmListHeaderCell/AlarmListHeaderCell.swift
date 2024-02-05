@@ -2,12 +2,12 @@
 //  AlarmListHeaderCell.swift
 //  AppleClockApp
 //
-//  Created by Ensar on 24.01.2024.
+//  Created by Ensar on 5.02.2024.
 //
 
 import UIKit
 
-class AlarmListHeaderCell: UICollectionReusableView {
+class AlarmListHeaderCell: UITableViewCell {
     @IBOutlet var setButton: UIButton!
     
     override func awakeFromNib() {

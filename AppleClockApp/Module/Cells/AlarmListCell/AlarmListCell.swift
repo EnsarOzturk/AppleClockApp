@@ -2,7 +2,7 @@
 //  AlarmListCell.swift
 //  AppleClockApp
 //
-//  Created by Ensar on 12.01.2024.
+//  Created by Ensar on 5.02.2024.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ protocol AlarmCellDelegate : AnyObject {
     func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool)
 }
 
-class AlarmListCell: UICollectionViewCell {
+class AlarmListCell: UITableViewCell {
     @IBOutlet var alarmClockLabel: UILabel!
     @IBOutlet var alarmSwitch: UISwitch!
     @IBOutlet var view: UIView!
@@ -24,10 +24,10 @@ class AlarmListCell: UICollectionViewCell {
         super.layoutSubviews()
         view.backgroundColor = UIColor(name: .cellViewColor)
         alarmClockLabel.textColor = UIColor(name: .titleColor)
+        layer.backgroundColor = UIColor(name: .cellBackgroundColor).cgColor
     }
 
     @IBAction func alarmSwitchClick(_ sender: UISwitch) {
         delegate?.alarmSwitchValueChanged(isOn: sender.isOn, index: index)
     }
 }
-

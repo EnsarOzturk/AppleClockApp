@@ -133,25 +133,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-Hu-ALt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SAV-RN-wIU">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZAb-w6-uLj">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="X4w-Hu-ALt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6CA-jy-B7k"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X4w-Hu-ALt" secondAttribute="trailing" id="VVm-Lt-qg2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X4w-Hu-ALt" secondAttribute="bottom" id="kH2-7k-RV7"/>
-                            <constraint firstItem="X4w-Hu-ALt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wRN-Af-kwu"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9a7-im-b2d"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G0p-a5-FF5"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGm-qn-B6p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SAV-RN-wIU" secondAttribute="bottom" id="r4Q-b7-6on"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNU-ql-0dd">
@@ -174,13 +167,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
                         <outlet property="editButton" destination="zPq-or-Csu" id="DQc-xR-9Yz"/>
+                        <outlet property="tableView" destination="SAV-RN-wIU" id="DjF-1U-SFn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="-365"/>
+            <point key="canvasLocation" x="745.80152671755718" y="-365.49295774647891"/>
         </scene>
         <!--Add Alarm View Controller-->
         <scene sceneID="7ux-Sr-Gwy">
