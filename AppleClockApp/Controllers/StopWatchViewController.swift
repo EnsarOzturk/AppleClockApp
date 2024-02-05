@@ -8,7 +8,6 @@
 import UIKit
 
 class StopWatchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     @IBOutlet var stopWatchLabel: UILabel!
     @IBOutlet var roundButton: UIButton!
     @IBOutlet var startButton: UIButton!
@@ -38,10 +37,10 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         if displayLink == nil {
-              startTime = CACurrentMediaTime()
-              displayLink = CADisplayLink(target: self, selector: #selector(updateElapsedTime))
-              displayLink?.add(to: .main, forMode: .default)
-              sender.setTitle("Stop", for: .normal)
+            startTime = CACurrentMediaTime()
+            displayLink = CADisplayLink(target: self, selector: #selector(updateElapsedTime))
+            displayLink?.add(to: .main, forMode: .default)
+            sender.setTitle("Stop", for: .normal)
             sender.setTitleColor(UIColor(name: .stopButtonTitleColor), for: .normal) 
             sender.backgroundColor = UIColor(name: .stopButtonColor)
           } else {
@@ -56,31 +55,31 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     @objc func updateElapsedTime() {
         let currentTime = CACurrentMediaTime()
         let elapsedTime = currentTime - startTime
-        kronometreEtiketiniGüncelle(elapsedTime)
+        updateStopWatch(elapsedTime)
      }
     
-        func kronometreEtiketiniGüncelle(_ elapsedTime: CFTimeInterval) {
-                let dakika = Int(elapsedTime / 60)
-                let saniye = Int(elapsedTime) % 60
-                let salise = Int((elapsedTime.truncatingRemainder(dividingBy: 1)) * 100)
-                
-                let biçimliZaman = String(format: "%02d:%02d,%02d", dakika, saniye, salise)
-                stopWatchLabel.text = biçimliZaman
-        }
+    func updateStopWatch(_ elapsedTime: CFTimeInterval) {
+        let minute = Int(elapsedTime / 60)
+        let second = Int(elapsedTime) % 60
+        let milliSecond = Int((elapsedTime.truncatingRemainder(dividingBy: 1)) * 100)
+        let timeFormat = String(format: "%02d:%02d,%02d", minute, second, milliSecond)
+        stopWatchLabel.text = timeFormat
+    }
     
     @IBAction func roundButtonTapped(_ sender: UIButton) {
         let currentTime = CACurrentMediaTime()
-          let elapsedTime = currentTime - startTime
-          let dakika = Int(elapsedTime / 60)
-          let saniye = Int(elapsedTime) % 60
-          let salise = Int((elapsedTime.truncatingRemainder(dividingBy: 1)) * 100)
-          let biçimliZaman = String(format: "%02d:%02d,%02d", dakika, saniye, salise)
-          roundTimes.append(biçimliZaman)
-        roundTimes.reverse()
-          collectionView.reloadData()
+        let elapsedTime = currentTime - startTime
+        let minute = Int(elapsedTime / 60)
+        let second = Int(elapsedTime) % 60
+        let milliSecond = Int((elapsedTime.truncatingRemainder(dividingBy: 1)) * 100)
+        let timeFormat = String(format: "%02d:%02d,%02d", minute, second, milliSecond)
+        roundTimes.insert(timeFormat, at: 0)
+        let indexPath = IndexPath(item: 0, section: 0)
+        collectionView.insertItems(at: [indexPath])
+        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
     
-    func resetChronometer() {
+    func resetStopWatch() {
         displayLink?.invalidate()
         displayLink = nil
         stopWatchLabel.text = "00:00,00"
@@ -94,14 +93,13 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StopWatchListCell", for: indexPath) as! StopWatchListCell
-        cell.updateRoundLabel(with: roundTimes[indexPath.item])
+        cell.updateRoundLabel(with: roundTimes[indexPath.item], roundNumber: roundTimes.count - indexPath.item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
-        let height = 80.0
-        
+        let height = 70.0
         return  CGSize(width: width, height: height)
     }
 }

@@ -167,22 +167,14 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="VJC-dh-kjY">
-                                <connections>
-                                    <action selector="addAlarmToggleButtonTapped:" destination="BYZ-38-t0r" id="wWy-Cu-zvk"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="z3i-T2-eQb">
-                                <connections>
-                                    <action selector="deleteButtonTapped:" destination="BYZ-38-t0r" id="cl5-Pb-LZF"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VJC-dh-kjY">
+                            <connections>
+                                <action selector="addAlarmToggleButtonTapped:" destination="BYZ-38-t0r" id="wWy-Cu-zvk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X4w-Hu-ALt" id="kSK-en-yqC"/>
-                        <outlet property="deleteButton" destination="z3i-T2-eQb" id="Sqd-rI-q4l"/>
                         <outlet property="editButton" destination="zPq-or-Csu" id="DQc-xR-9Yz"/>
                     </connections>
                 </viewController>

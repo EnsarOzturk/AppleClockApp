@@ -30,6 +30,16 @@ class AlarmListViewModel {
            saveAlarmListToUserDefaults()
        }
     
+    func deleteAlarms(at indexes: [Int]) {
+        // Seçilen hücrelerin index'lerini al
+            let sortedIndexes = indexes.sorted(by: >)
+            
+            // ViewModel'de bulunan deleteAlarm fonksiyonunu kullanarak seçili alarmları sil
+            for index in sortedIndexes {
+                deleteAlarm(at: index)
+            }
+    }
+    
     func prepareAddAlarm() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let addVC = storyboard.instantiateViewController(identifier: "AddAlarmViewController") as! AddAlarmViewController

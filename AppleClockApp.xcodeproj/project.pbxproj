@@ -21,6 +21,7 @@
 		FC4C327E2B6A8C9B00CCBDF1 /* AlarmSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC4C327D2B6A8C9B00CCBDF1 /* AlarmSound.mp3 */; };
 		FC4C32812B6AD2C500CCBDF1 /* StopWatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C327F2B6AD2C500CCBDF1 /* StopWatchListCell.swift */; };
 		FC4C32822B6AD2C500CCBDF1 /* StopWatchListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C32802B6AD2C500CCBDF1 /* StopWatchListCell.xib */; };
+		FC4C32852B6BE97B00CCBDF1 /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32842B6BE97B00CCBDF1 /* StopWatchViewModel.swift */; };
 		FCC1EA292B5061C90001A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA282B5061C90001A65A /* AppDelegate.swift */; };
 		FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */; };
 		FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC1EA2E2B5061C90001A65A /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		FC4C327D2B6A8C9B00CCBDF1 /* AlarmSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AlarmSound.mp3; path = ../../../../../../Downloads/AlarmSound.mp3; sourceTree = "<group>"; };
 		FC4C327F2B6AD2C500CCBDF1 /* StopWatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchListCell.swift; sourceTree = "<group>"; };
 		FC4C32802B6AD2C500CCBDF1 /* StopWatchListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopWatchListCell.xib; sourceTree = "<group>"; };
+		FC4C32842B6BE97B00CCBDF1 /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
 		FCC1EA252B5061C90001A65A /* AppleClockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleClockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC1EA282B5061C90001A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC1EA2A2B5061C90001A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */,
 				FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */,
+				FC4C32842B6BE97B00CCBDF1 /* StopWatchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				FCC1EA2B2B5061C90001A65A /* SceneDelegate.swift in Sources */,
 				FC4C32732B69706500CCBDF1 /* UITabBarController+Extension.swift in Sources */,
 				FCC1EA3E2B514A9F0001A65A /* AlarmListCell.swift in Sources */,
+				FC4C32852B6BE97B00CCBDF1 /* StopWatchViewModel.swift in Sources */,
 				FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */,
 				FC4C32652B63D7D300CCBDF1 /* UIColor+Extension.swift in Sources */,
 				FC4C32812B6AD2C500CCBDF1 /* StopWatchListCell.swift in Sources */,

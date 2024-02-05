@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42M-wa-z6S">
-                        <rect key="frame" x="22" y="16" width="215" height="35"/>
+                        <rect key="frame" x="16" y="16" width="227" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="86B-cx-bcM"/>
                         </constraints>
@@ -30,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYW-tL-BCx">
-                        <rect key="frame" x="24" y="67" width="268" height="20"/>
+                        <rect key="frame" x="16" y="67" width="292" height="20"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <color key="textColor" systemColor="systemGray3Color"/>
                         <nil key="highlightedColor"/>
@@ -42,36 +41,8 @@
                             <constraint firstAttribute="height" constant="1" id="3aZ-II-bFS"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA4-VZ-tqP">
-                        <rect key="frame" x="4" y="40" width="10" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="10" id="EHc-zs-2e7"/>
-                            <constraint firstAttribute="height" constant="10" id="TQd-Ny-bQS"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="minus" catalog="system" symbolScale="small"/>
-                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="trashButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nf0-pt-aio"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR0-bJ-MmQ">
-                        <rect key="frame" x="300" y="6" width="12" height="83"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="12" id="5Th-hZ-NJI"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="arrow.right" catalog="system" symbolScale="small"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="editingButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="i8g-sq-ggC"/>
-                        </connections>
-                    </button>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PxV-D8-BG0">
-                        <rect key="frame" x="245" y="33" width="51" height="31"/>
+                        <rect key="frame" x="251" y="33" width="51" height="31"/>
                         <connections>
                             <action selector="alarmSwitchClick:" destination="gTV-IL-0wX" eventType="valueChanged" id="Qe7-7g-hA0"/>
                         </connections>
@@ -81,40 +52,30 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="sA4-VZ-tqP" secondAttribute="bottom" constant="45" id="83t-Qp-DVo"/>
-                <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="YR0-bJ-MmQ" secondAttribute="bottom" constant="6" id="92Q-mj-CbU"/>
-                <constraint firstItem="sA4-VZ-tqP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="Bv6-Sv-Uyh"/>
+                <constraint firstAttribute="trailing" secondItem="PxV-D8-BG0" secondAttribute="trailing" constant="16" id="3yp-fK-Rto"/>
+                <constraint firstAttribute="trailing" secondItem="WYW-tL-BCx" secondAttribute="trailing" constant="8" id="5Uv-Ac-x0K"/>
+                <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="WYW-tL-BCx" secondAttribute="bottom" constant="8" symbolic="YES" id="6aP-is-Utr"/>
+                <constraint firstItem="WYW-tL-BCx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="AQJ-bA-geN"/>
                 <constraint firstItem="42M-wa-z6S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="DF0-U4-GSo"/>
                 <constraint firstItem="PxV-D8-BG0" firstAttribute="leading" secondItem="42M-wa-z6S" secondAttribute="trailing" constant="8" id="FQx-S9-96y"/>
-                <constraint firstItem="WYW-tL-BCx" firstAttribute="top" secondItem="42M-wa-z6S" secondAttribute="bottom" constant="16" id="FdB-gu-i6C"/>
-                <constraint firstItem="YR0-bJ-MmQ" firstAttribute="leading" secondItem="PxV-D8-BG0" secondAttribute="trailing" constant="6" id="J03-zs-XCG"/>
                 <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="PxV-D8-BG0" secondAttribute="bottom" constant="31" id="J0q-pQ-ebD"/>
-                <constraint firstItem="42M-wa-z6S" firstAttribute="leading" secondItem="sA4-VZ-tqP" secondAttribute="trailing" constant="8" id="KJv-Bd-Owv"/>
                 <constraint firstItem="PxV-D8-BG0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="33" id="KiB-bb-Tni"/>
                 <constraint firstItem="CYo-01-Akw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="SSQ-w9-CXp"/>
                 <constraint firstAttribute="bottom" secondItem="CYo-01-Akw" secondAttribute="bottom" id="WcC-wl-rU8"/>
-                <constraint firstItem="YR0-bJ-MmQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="bF2-qY-yzT"/>
-                <constraint firstItem="WYW-tL-BCx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="iRb-aB-vM4"/>
-                <constraint firstItem="CYo-01-Akw" firstAttribute="top" secondItem="WYW-tL-BCx" secondAttribute="bottom" constant="8" symbolic="YES" id="l7H-bs-BOZ"/>
                 <constraint firstAttribute="trailing" secondItem="CYo-01-Akw" secondAttribute="trailing" constant="8" id="nC0-gf-fcq"/>
-                <constraint firstAttribute="trailing" secondItem="YR0-bJ-MmQ" secondAttribute="trailing" constant="4" id="oOO-dm-s0i"/>
-                <constraint firstItem="sA4-VZ-tqP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="40" id="wrD-P1-hZU"/>
-                <constraint firstItem="YR0-bJ-MmQ" firstAttribute="leading" secondItem="WYW-tL-BCx" secondAttribute="trailing" constant="8" id="ywF-1X-s4C"/>
+                <constraint firstItem="WYW-tL-BCx" firstAttribute="top" secondItem="42M-wa-z6S" secondAttribute="bottom" constant="16" id="nWs-Z5-BFM"/>
+                <constraint firstItem="42M-wa-z6S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="w9R-Bb-9Qy"/>
             </constraints>
             <size key="customSize" width="316" height="97"/>
             <connections>
                 <outlet property="alarmClockLabel" destination="42M-wa-z6S" id="ZpN-wd-aXk"/>
                 <outlet property="alarmSwitch" destination="PxV-D8-BG0" id="8ZK-dF-qKe"/>
-                <outlet property="editingButton" destination="YR0-bJ-MmQ" id="Tz3-p1-kct"/>
-                <outlet property="trashButton" destination="sA4-VZ-tqP" id="mAc-E7-jTU"/>
                 <outlet property="view" destination="CYo-01-Akw" id="BkD-xp-dFk"/>
             </connections>
-            <point key="canvasLocation" x="174.04580152671755" y="35.91549295774648"/>
+            <point key="canvasLocation" x="294.6564885496183" y="36.619718309859159"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="arrow.right" catalog="system" width="128" height="95"/>
-        <image name="minus" catalog="system" width="128" height="26"/>
         <namedColor name="viewColor">
             <color red="0.1961210072" green="0.19585859780000001" blue="0.2078448534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

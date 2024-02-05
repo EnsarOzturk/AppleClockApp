@@ -15,7 +15,5 @@ class AlarmListHeaderCell: UICollectionReusableView {
         setButton.backgroundColor = UIColor(name: .setButtonColor)
         setButton.layer.cornerRadius = 16.0
         setButton.titleLabel?.textColor = UIColor(name: .setButtonTitleColor)
-      
     }
-    
 }

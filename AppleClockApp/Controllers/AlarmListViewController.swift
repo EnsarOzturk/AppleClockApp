@@ -31,55 +31,8 @@ class AlarmListViewController: UIViewController {
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
-        isEditingMode.toggle()
-        collectionView.allowsMultipleSelection = isEditingMode
-        updateTrashButtonAppearanceForSelectedCells()
-        updateTrashButtonAppearance()
-        deleteButton.isEnabled = isEditingMode
-        
-        if isEditingMode {
-            deleteButton.tintColor = UIColor(name: .navigationButtonColor)
-        } else {
-            deleteButton.tintColor = .clear
-        }
-    }
-    
-    private func updateTrashButtonAppearanceForSelectedCells() {
-        for indexPath in selectedCell {
-            if let cell = collectionView.cellForItem(at: indexPath) as? AlarmListCell {
-                cell.select = isEditingMode
-                cell.updateTrashButtonAppearance()
-            }
-        }
-    }
-    
-     func updateTrashButtonAppearance() {
-        let trashButtonColor: UIColor = isEditingMode ? .red : .black
-
-        for indexPath in collectionView.indexPathsForVisibleItems {
-            if let cell = collectionView.cellForItem(at: indexPath) as? AlarmListCell {
-                cell.trashButton.backgroundColor = trashButtonColor
-            }
-        }
-    }
-    
-    
-    private func deleteSelectedAlarms() {
-        for indexPath in selectedCell {
-            viewModel.deleteAlarm(at: indexPath.row)
-        }
-        selectedCell.removeAll()
-        collectionView.reloadData()
-        
-        isEditingMode = false
-        collectionView.allowsMultipleSelectionDuringEditing = false
-    }
-    
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        deleteSelectedAlarms()
     }
 
-    
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
         viewModel.delegate = self
         let addVC = viewModel.prepareAddAlarm()
@@ -131,16 +84,13 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmListCell", for: indexPath) as! AlarmListCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmListCell", 
+                                                      for: indexPath) as! AlarmListCell
         let alarm = viewModel.alarmList[indexPath.row]
         cell.index = indexPath.row
         cell.delegate = self
         cell.alarmClockLabel.text = alarm.hour
         cell.alarmSwitch.isOn = alarm.isSwitchOn
-        let trashButtonColor: UIColor = isEditingMode ? .red: .black
-        cell.trashButton.backgroundColor = trashButtonColor
-    
         return cell
     }
     
@@ -160,9 +110,8 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
         var header: AlarmListHeaderCell!
         if kind == UICollectionView.elementKindSectionHeader {
             header =
-            (collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmListHeaderCell", for: indexPath as IndexPath)
-             as? AlarmListHeaderCell)!
-            
+            (collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmListHeaderCell", 
+                                                             for: indexPath as IndexPath) as? AlarmListHeaderCell)!
             return header
         }else {
             return UICollectionReusableView()
@@ -177,6 +126,8 @@ extension AlarmListViewController: AlarmSaveDelegate {
 }
 
 extension AlarmListViewController: AlarmCellDelegate {
+
+
     func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool) {
            guard let alarmTime = alarmTime else {
                return
@@ -188,21 +139,14 @@ extension AlarmListViewController: AlarmCellDelegate {
            present(alarmVC, animated: true, completion: nil)
        }
     
-    func trashButtonTapped(index: Int) {
-        if isEditingMode {
-                if let selectedIndexPath = collectionView.indexPathsForSelectedItems, selectedIndexPath.contains(IndexPath(row: index, section: 0)) {
-                    selectedCell.removeAll { $0 == IndexPath(row: index, section: 0) }
-                } else {
-                    selectedCell.append(IndexPath(row: index, section: 0))
-                }
-                updateTrashButtonAppearanceForSelectedCells()
-            }
-        }
+    
     
     func alarmSwitchValueChanged(isOn: Bool, index: Int) {
         viewModel.toggleSwitch(isOn: isOn, index: index)
     }
 }
+
+
 
 extension AlarmListViewController: AlarmListViewModelDelegate {
     func updateCollectionView() {
