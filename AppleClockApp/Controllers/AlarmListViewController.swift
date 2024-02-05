@@ -10,7 +10,6 @@ import UIKit
 class AlarmListViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var editButton: UIBarButtonItem!
-    @IBOutlet var deleteButton: UIBarButtonItem!
     
     var viewModel: AlarmListViewModel!
     var isEditingMode: Bool = false
@@ -25,9 +24,6 @@ class AlarmListViewController: UIViewController {
             configureTabbar()
             configureCollectionView()
             configureNavigation()
-            deleteButton.isEnabled = false
-            deleteButton.tintColor = .clear
-            
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -131,22 +127,17 @@ extension AlarmListViewController: AlarmCellDelegate {
     func editingButtonTapped(index: Int, alarmTime: String?, isAlarmOn: Bool) {
            guard let alarmTime = alarmTime else {
                return
-           }
-
+        }
            let alarmVC = AlarmViewController()
            alarmVC.alarmTime = alarmTime
            alarmVC.isAlarmOn = isAlarmOn
            present(alarmVC, animated: true, completion: nil)
        }
     
-    
-    
     func alarmSwitchValueChanged(isOn: Bool, index: Int) {
         viewModel.toggleSwitch(isOn: isOn, index: index)
     }
 }
-
-
 
 extension AlarmListViewController: AlarmListViewModelDelegate {
     func updateCollectionView() {
