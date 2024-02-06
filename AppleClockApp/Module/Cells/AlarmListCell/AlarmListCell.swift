@@ -14,6 +14,7 @@ protocol AlarmCellDelegate : AnyObject {
 
 class AlarmListCell: UITableViewCell {
     @IBOutlet var alarmClockLabel: UILabel!
+    @IBOutlet var alarmSubtitleLabel: UILabel!
     @IBOutlet var alarmSwitch: UISwitch!
     @IBOutlet var view: UIView!
     

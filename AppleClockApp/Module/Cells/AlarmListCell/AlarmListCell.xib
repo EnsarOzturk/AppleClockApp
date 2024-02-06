@@ -27,7 +27,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-26-Stl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-26-Stl">
                         <rect key="frame" x="8" y="67" width="292" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="RzN-qM-VGg"/>
@@ -69,6 +69,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="alarmClockLabel" destination="cvA-GS-8DX" id="Jbn-eP-k3h"/>
+                <outlet property="alarmSubtitleLabel" destination="oKB-26-Stl" id="Gpd-vB-QKw"/>
                 <outlet property="alarmSwitch" destination="4bg-mG-Kse" id="uZ8-2T-gT7"/>
                 <outlet property="view" destination="BXl-fI-h2E" id="Sdi-o3-PIp"/>
             </connections>

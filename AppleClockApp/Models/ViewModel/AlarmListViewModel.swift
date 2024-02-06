@@ -10,6 +10,7 @@ import UIKit
 
 protocol AlarmListViewModelDelegate: AnyObject {
     func updateTableView()
+    func updateTableViewAtIndex(_ index: Int)
 }
 
 class AlarmListViewModel {

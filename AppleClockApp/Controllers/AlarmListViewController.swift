@@ -24,6 +24,7 @@ class AlarmListViewController: UIViewController {
             configureTabbar()
             configureTableView()
             configureNavigation()
+
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
@@ -73,6 +74,43 @@ class AlarmListViewController: UIViewController {
         tableView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forCellReuseIdentifier: "AlarmListHeaderCell")
         tableView.backgroundColor = UIColor(name: .cellBackgroundColor)
     }
+    
+    func checkAlarm() {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        
+        // TableView'deki her hücreyi döngüye al ve alarm saatlerini kontrol et
+        for cell in tableView.visibleCells {
+            if let alarmCell = cell as? AlarmListCell {
+                   // Hücredeki alarm saati etiketini al
+                let alarmTimeText = alarmCell.alarmClockLabel.text ?? ""
+                   
+                   // Alarm saati etiketinden saat ve dakika değerlerini ayrıştır
+                let components = alarmTimeText.components(separatedBy: ":")
+                if components.count == 2, let hour = Int(components[0]), let minute = Int(components[1]) {
+                       // Alarm zamanını oluştur
+                var alarmComponents = DateComponents()
+                alarmComponents.hour = hour
+                alarmComponents.minute = minute
+                       
+                       // Alarm zamanını oluştur
+                if let alarmDate = calendar.date(from: alarmComponents) {
+                        // Şu anki zamanı ve alarm zamanını karşılaştır
+                if calendar.isDate(currentDate, equalTo: alarmDate, toGranularity: .minute) {
+                               // Eğer şu anki zaman ve alarm zamanı aynıysa, alarmı çalıştır
+                 runAlarm()
+                    break
+                }
+            }
+        }
+    }
+  }
+ }
+    
+    func runAlarm() {
+        // Alarmı çalıştırma kodu burada olacak
+        print("Alarm çalıyor!")
+    }
 }
 
 extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -94,6 +132,7 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.delegate = self
             cell.alarmClockLabel.text = alarm.hour
             cell.alarmSwitch.isOn = alarm.isSwitchOn
+            cell.alarmSubtitleLabel.textColor = UIColor(name: .titleColor)
             cell.backgroundColor = UIColor(name: .cellBackgroundColor)
             return cell
         }
@@ -124,9 +163,23 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
         header.backgroundColor = UIColor(name: .cellBackgroundColor)
            return header
        }
-}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row != 0 else {
+                return
+            }
+            let addVC = viewModel.prepareAddAlarm()
+            present(addVC, animated: true, completion: nil)
+        }
+    }
+
 
 extension AlarmListViewController: AlarmSaveDelegate {
+    func didUpdateAlarm(atIndex index: Int) {
+        fatalError("didUpdateAlarm(atIndex:) must be implemented")
+
+    }
+    
     func alarmSaved(hour: String) {
         viewModel.addAlarm(hour: hour)
     }
@@ -149,6 +202,10 @@ extension AlarmListViewController: AlarmCellDelegate {
 }
 
 extension AlarmListViewController: AlarmListViewModelDelegate {
+    func updateTableViewAtIndex(_ index: Int) {
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
     func updateTableView() {
         tableView.reloadData()
     }
