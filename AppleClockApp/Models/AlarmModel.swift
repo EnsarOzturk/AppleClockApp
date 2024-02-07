@@ -10,4 +10,5 @@ import Foundation
 struct Alarm: Codable {
     var hour: String
     var isSwitchOn: Bool
+    var date: Date
 }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,18 +93,38 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tn-Cc-A5V">
+                                <rect key="frame" x="209" y="339" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.1216431186" green="0.12918525929999999" blue="0.14117839930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2Xe-fg-O9o"/>
+                                    <constraint firstAttribute="width" constant="80" id="EQo-4x-cp4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" imagePadding="0.0">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="default"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="W7D-MD-PYR" eventType="touchUpInside" id="G63-pM-nd1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nch-wy-Ip9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tte-DS-nEk" firstAttribute="top" secondItem="YEn-7p-y8U" secondAttribute="bottom" id="2M2-6z-fjt"/>
+                            <constraint firstItem="3Tn-Cc-A5V" firstAttribute="leading" secondItem="TF7-Fw-KN6" secondAttribute="trailing" constant="113" id="53M-4r-nnz"/>
                             <constraint firstItem="h7c-WD-OLF" firstAttribute="top" secondItem="nch-wy-Ip9" secondAttribute="top" constant="100" id="9ID-Sm-sQE"/>
                             <constraint firstItem="YEn-7p-y8U" firstAttribute="top" secondItem="TF7-Fw-KN6" secondAttribute="bottom" constant="16" id="Hg0-wz-L9d"/>
+                            <constraint firstItem="YEn-7p-y8U" firstAttribute="top" secondItem="3Tn-Cc-A5V" secondAttribute="bottom" constant="16" id="ITy-bC-80X"/>
                             <constraint firstItem="h7c-WD-OLF" firstAttribute="leading" secondItem="nch-wy-Ip9" secondAttribute="leading" constant="8" id="Jzu-g5-ZZ4"/>
                             <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="xDN-jp-fAm" secondAttribute="trailing" constant="16" id="SiL-Gp-hMY"/>
                             <constraint firstItem="YEn-7p-y8U" firstAttribute="leading" secondItem="mRh-1t-IiJ" secondAttribute="leading" constant="16" id="V4c-mO-evL"/>
                             <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="Tte-DS-nEk" secondAttribute="trailing" constant="16" id="WnQ-vR-jFm"/>
                             <constraint firstItem="Tte-DS-nEk" firstAttribute="bottom" secondItem="nch-wy-Ip9" secondAttribute="bottom" id="YpG-4t-FQt"/>
+                            <constraint firstItem="xDN-jp-fAm" firstAttribute="leading" secondItem="3Tn-Cc-A5V" secondAttribute="trailing" constant="8" symbolic="YES" id="YpI-QE-iKo"/>
+                            <constraint firstItem="3Tn-Cc-A5V" firstAttribute="top" secondItem="h7c-WD-OLF" secondAttribute="bottom" constant="80" id="bnL-3P-uNs"/>
                             <constraint firstAttribute="trailing" secondItem="YEn-7p-y8U" secondAttribute="trailing" constant="16" id="c3C-YD-Q03"/>
                             <constraint firstItem="xDN-jp-fAm" firstAttribute="top" secondItem="h7c-WD-OLF" secondAttribute="bottom" constant="80" id="dtU-Gi-vMh"/>
                             <constraint firstItem="nch-wy-Ip9" firstAttribute="trailing" secondItem="h7c-WD-OLF" secondAttribute="trailing" constant="8" id="egf-qc-ssH"/>
@@ -115,6 +136,7 @@
                     <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch.fill" catalog="system" id="XoR-lH-TXA"/>
                     <connections>
                         <outlet property="collectionView" destination="Tte-DS-nEk" id="Ebj-rD-Jnv"/>
+                        <outlet property="refreshButton" destination="3Tn-Cc-A5V" id="lEy-nE-GRy"/>
                         <outlet property="roundButton" destination="TF7-Fw-KN6" id="mAm-cm-ere"/>
                         <outlet property="startButton" destination="xDN-jp-fAm" id="Y06-MZ-Z44"/>
                         <outlet property="stopWatchLabel" destination="h7c-WD-OLF" id="La5-KK-nFz"/>
@@ -133,7 +155,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SAV-RN-wIU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAV-RN-wIU">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -141,10 +163,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SAV-RN-wIU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9a7-im-b2d"/>
-                            <constraint firstItem="SAV-RN-wIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G0p-a5-FF5"/>
-                            <constraint firstItem="SAV-RN-wIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGm-qn-B6p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SAV-RN-wIU" secondAttribute="bottom" id="r4Q-b7-6on"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D5e-DJ-EmG"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JdI-JL-E6K"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qnx-wP-y92"/>
+                            <constraint firstItem="SAV-RN-wIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ffH-cY-2m8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNU-ql-0dd">
@@ -274,56 +296,6 @@
             </objects>
             <point key="canvasLocation" x="1448.0916030534352" y="-365.49295774647891"/>
         </scene>
-        <!--Alarm View Controller-->
-        <scene sceneID="7oj-e2-g02">
-            <objects>
-                <viewController storyboardIdentifier="AlarmViewController" id="qUJ-05-nB5" customClass="AlarmViewController" customModule="AppleClockApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RuI-Pt-xgw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csg-oH-qnC">
-                                <rect key="frame" x="86" y="231" width="220" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="N26-fd-lUg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iF-Br-Vxc">
-                                <rect key="frame" x="121" y="464" width="150" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="lzC-4i-Tfr"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="closeButtonTapped:" destination="qUJ-05-nB5" eventType="touchUpInside" id="0ZB-YM-ueH"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="N0w-K6-XZe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="csg-oH-qnC" firstAttribute="leading" secondItem="N0w-K6-XZe" secondAttribute="leading" constant="86" id="3F8-JL-mRz"/>
-                            <constraint firstItem="csg-oH-qnC" firstAttribute="top" secondItem="N0w-K6-XZe" secondAttribute="top" constant="172" id="8Cm-pv-OUJ"/>
-                            <constraint firstItem="N0w-K6-XZe" firstAttribute="trailing" secondItem="csg-oH-qnC" secondAttribute="trailing" constant="87" id="8iG-vb-chY"/>
-                            <constraint firstItem="9iF-Br-Vxc" firstAttribute="top" secondItem="csg-oH-qnC" secondAttribute="bottom" constant="153" id="9bd-jQ-lsx"/>
-                            <constraint firstItem="N0w-K6-XZe" firstAttribute="trailing" secondItem="9iF-Br-Vxc" secondAttribute="trailing" constant="122" id="IJP-2d-Aq4"/>
-                            <constraint firstItem="N0w-K6-XZe" firstAttribute="bottom" secondItem="9iF-Br-Vxc" secondAttribute="bottom" constant="294" id="Lw1-cV-LT9"/>
-                            <constraint firstItem="9iF-Br-Vxc" firstAttribute="leading" secondItem="N0w-K6-XZe" secondAttribute="leading" constant="121" id="tLv-YZ-pEa"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="alarmLabel" destination="csg-oH-qnC" id="rf6-0Q-IDH"/>
-                        <outlet property="closeButton" destination="9iF-Br-Vxc" id="i8C-qK-3fm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yQg-cl-9sL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2171.7557251908397" y="-365.49295774647891"/>
-        </scene>
         <!--Alarms-->
         <scene sceneID="L2C-hg-hUZ">
             <objects>
@@ -346,6 +318,7 @@
     </scenes>
     <resources>
         <image name="alarm.fill" catalog="system" width="123" height="128"/>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="stopwatch.fill" catalog="system" width="121" height="128"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

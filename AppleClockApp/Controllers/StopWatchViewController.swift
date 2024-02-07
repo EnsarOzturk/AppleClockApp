@@ -13,6 +13,8 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var startButton: UIButton!
     @IBOutlet var stopWatchView: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var refreshButton: UIButton!
+    
     var displayLink: CADisplayLink?
     var startTime: CFTimeInterval = 0.0
     var roundTimes: [String] = []
@@ -51,6 +53,11 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
               sender.backgroundColor = UIColor(name: .startButtonColor)
           }
     }
+    
+    @IBAction func refreshButtonTapped(_ sender: UIButton) {
+        
+    }
+    
     
     @objc func updateElapsedTime() {
         let currentTime = CACurrentMediaTime()

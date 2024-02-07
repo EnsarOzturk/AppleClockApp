@@ -24,8 +24,8 @@ class AlarmListViewModel {
         getAlarmListFromUserDefaults()
     }
     
-    func addAlarm(hour: String) {
-           let alarm = Alarm(hour: hour, isSwitchOn: true)
+    func addAlarm(hour: String, date: Date) {
+        let alarm = Alarm(hour: hour, isSwitchOn: true, date: date)
            alarmList.append(alarm)
            viewModelDelegate?.updateTableView()
            saveAlarmListToUserDefaults()

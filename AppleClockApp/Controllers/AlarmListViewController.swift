@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AlarmListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
@@ -24,13 +25,11 @@ class AlarmListViewController: UIViewController {
             configureTabbar()
             configureTableView()
             configureNavigation()
-
     }
     
     @IBAction func alarmEditButtonTapped(_ sender: Any) {
         isEditingMode.toggle()
         tableView.setEditing(!tableView.isEditing, animated: true)
-
     }
 
     @IBAction func addAlarmToggleButtonTapped(_ sender: Any) {
@@ -74,43 +73,6 @@ class AlarmListViewController: UIViewController {
         tableView.register(UINib(nibName: "AlarmListHeaderCell", bundle: nil), forCellReuseIdentifier: "AlarmListHeaderCell")
         tableView.backgroundColor = UIColor(name: .cellBackgroundColor)
     }
-    
-    func checkAlarm() {
-        let calendar = Calendar.current
-        let currentDate = Date()
-        
-        // TableView'deki her hücreyi döngüye al ve alarm saatlerini kontrol et
-        for cell in tableView.visibleCells {
-            if let alarmCell = cell as? AlarmListCell {
-                   // Hücredeki alarm saati etiketini al
-                let alarmTimeText = alarmCell.alarmClockLabel.text ?? ""
-                   
-                   // Alarm saati etiketinden saat ve dakika değerlerini ayrıştır
-                let components = alarmTimeText.components(separatedBy: ":")
-                if components.count == 2, let hour = Int(components[0]), let minute = Int(components[1]) {
-                       // Alarm zamanını oluştur
-                var alarmComponents = DateComponents()
-                alarmComponents.hour = hour
-                alarmComponents.minute = minute
-                       
-                       // Alarm zamanını oluştur
-                if let alarmDate = calendar.date(from: alarmComponents) {
-                        // Şu anki zamanı ve alarm zamanını karşılaştır
-                if calendar.isDate(currentDate, equalTo: alarmDate, toGranularity: .minute) {
-                               // Eğer şu anki zaman ve alarm zamanı aynıysa, alarmı çalıştır
-                 runAlarm()
-                    break
-                }
-            }
-        }
-    }
-  }
- }
-    
-    func runAlarm() {
-        // Alarmı çalıştırma kodu burada olacak
-        print("Alarm çalıyor!")
-    }
 }
 
 extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -153,7 +115,11 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        if indexPath.row == 0 {
+            return 180
+        } else {
+            return 120
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -181,7 +147,8 @@ extension AlarmListViewController: AlarmSaveDelegate {
     }
     
     func alarmSaved(hour: String) {
-        viewModel.addAlarm(hour: hour)
+        let currentDate = Date()
+        viewModel.addAlarm(hour: hour, date: currentDate)
     }
 }
 
@@ -190,11 +157,7 @@ extension AlarmListViewController: AlarmCellDelegate {
            guard let alarmTime = alarmTime else {
                return
         }
-           let alarmVC = AlarmViewController()
-           alarmVC.alarmTime = alarmTime
-           alarmVC.isAlarmOn = isAlarmOn
-           present(alarmVC, animated: true, completion: nil)
-       }
+    }
     
     func alarmSwitchValueChanged(isOn: Bool, index: Int) {
         viewModel.toggleSwitch(isOn: isOn, index: index)
