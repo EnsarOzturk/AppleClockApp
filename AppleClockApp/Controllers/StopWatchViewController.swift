@@ -55,7 +55,7 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
-        
+        resetStopWatch()
     }
     
     
