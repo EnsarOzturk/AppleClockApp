@@ -39,10 +39,11 @@ class AddAlarmViewModel: AddAlarmViewModelProtocol {
     }
     
     func datePickerValueChanged(datePicker: UIDatePicker, label: UILabel) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .short
-            dateFormatter.dateFormat = "HH:mm"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+           
         do {
             selectedHour = dateFormatter.string(from: datePicker.date)
             label.text = selectedHour
