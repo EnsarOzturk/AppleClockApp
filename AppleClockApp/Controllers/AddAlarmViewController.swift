@@ -35,8 +35,14 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        viewModel.saveButtonTapped(hour: addAlarmLabel.text ?? "", delegate: delegate)
-        self.dismiss(animated: true, completion: nil)
+//        viewModel.saveButtonTapped(hour: addAlarmLabel.text ?? "", delegate: delegate)
+//        self.dismiss(animated: true, completion: nil)
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "HH:mm" // Saat formatını ayarlayın
+           let selectedTime = dateFormatter.string(from: datePicker.date)
+           
+           viewModel.saveButtonTapped(hour: selectedTime, delegate: delegate)
+           self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func datePickerValueChange(_ sender: UIDatePicker) {
