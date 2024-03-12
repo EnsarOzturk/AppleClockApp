@@ -102,8 +102,7 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.alarmList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            viewModel.deleteAlarm(at: indexPath.row)
         }
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

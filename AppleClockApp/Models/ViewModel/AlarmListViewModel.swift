@@ -27,8 +27,8 @@ class AlarmListViewModel {
     func addAlarm(hour: String, date: Date) {
         let alarm = Alarm(hour: hour, isSwitchOn: true, date: date)
            alarmList.append(alarm)
-           viewModelDelegate?.updateTableView()
            saveAlarmListToUserDefaults()
+           viewModelDelegate?.updateTableView()
        }
     
     func prepareAddAlarm() -> UIViewController {
@@ -43,6 +43,12 @@ class AlarmListViewModel {
     func toggleSwitch(isOn: Bool, index: Int) {
            alarmList[index].isSwitchOn = isOn
            saveAlarmListToUserDefaults()
+    }
+    
+    func deleteAlarm(at index: Int) {
+        alarmList.remove(at: index)
+        saveAlarmListToUserDefaults()
+        viewModelDelegate?.updateTableView()
     }
     
     func getAlarmListFromUserDefaults() {

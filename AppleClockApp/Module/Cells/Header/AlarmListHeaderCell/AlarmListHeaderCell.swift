@@ -10,6 +10,7 @@ import UIKit
 class AlarmListHeaderCell: UITableViewCell {
     @IBOutlet var setButton: UIButton!
     @IBOutlet var viewView: UIView!
+    @IBOutlet var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,5 +18,6 @@ class AlarmListHeaderCell: UITableViewCell {
         setButton.layer.cornerRadius = 16.0
         setButton.titleLabel?.textColor = UIColor(name: .setButtonTitleColor)
         viewView.backgroundColor = UIColor(name: .cellViewColor)
+        label.textColor = UIColor(name: .titleColor)
     }
 }

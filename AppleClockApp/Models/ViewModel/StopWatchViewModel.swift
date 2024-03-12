@@ -17,6 +17,7 @@ protocol StopWatchViewModelProtocol {
     func stopStopWatch()
     func resetStopWatch()
     func recordRoundTime()
+    func formatElapsedTime(_ elapsedTime: CFTimeInterval) -> String
 }
 
 class StopWatchViewModel: StopWatchViewModelProtocol {
@@ -67,9 +68,12 @@ class StopWatchViewModel: StopWatchViewModelProtocol {
         let currentTime = CACurrentMediaTime()
         let elapsedTime = currentTime - startTime
         print(formatElapsedTime(elapsedTime))
+        
+        NotificationCenter.default.post(name: NSNotification.Name("updateStopWatchLabel"), object: nil)
+        
     }
     
-    private func formatElapsedTime(_ elapsedTime: CFTimeInterval) -> String {
+     func formatElapsedTime(_ elapsedTime: CFTimeInterval) -> String {
         let minute = Int(elapsedTime / 60)
         let second = Int(elapsedTime) % 60
         let milliSecond = Int((elapsedTime.truncatingRemainder(dividingBy: 1)) * 100)
