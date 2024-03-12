@@ -34,7 +34,6 @@ class AddAlarmViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-
         let selectedTimeString = getSelectedTimeString()
             viewModel.saveButtonTapped(hour: selectedTimeString, delegate: delegate)
             dismiss(animated: true, completion: nil)

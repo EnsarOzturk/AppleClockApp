@@ -15,7 +15,6 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var stopWatchView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var refreshButton: UIButton!
-    
     var viewModel: StopWatchViewModelProtocol = StopWatchViewModel()
 
       override func viewDidLoad() {
@@ -38,7 +37,7 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
           updateStopWatchLabel()
           notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name("updateStopWatchLabel"), object: nil, queue: OperationQueue.main) { [weak self] _ in
                      self?.updateStopWatchLabel()
-            }
+          }
       }
     
     func updateStopWatchLabel() {

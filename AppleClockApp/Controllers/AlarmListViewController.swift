@@ -11,7 +11,6 @@ import AVFoundation
 class AlarmListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var editButton: UIBarButtonItem!
-    
     var viewModel: AlarmListViewModel!
     var isEditingMode: Bool = false
     var selectedCell: [IndexPath] = []
@@ -20,8 +19,6 @@ class AlarmListViewController: UIViewController {
             super.viewDidLoad()
             viewModel = AlarmListViewModel(delegate: self)
             view.backgroundColor = UIColor(name: .cellBackgroundColor)
-            //navigationController?.setupNavigation()
-            //tabBarController?.setupTabbar()
             configureTabbar()
             configureTableView()
             configureNavigation()
@@ -142,7 +139,6 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
 extension AlarmListViewController: AlarmSaveDelegate {
     func didUpdateAlarm(atIndex index: Int) {
         fatalError("didUpdateAlarm(atIndex:) must be implemented")
-
     }
     
     func alarmSaved(hour: String) {
