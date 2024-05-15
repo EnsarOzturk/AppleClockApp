@@ -13,7 +13,6 @@
 		FC4C32672B63DBDC00CCBDF1 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32662B63DBDC00CCBDF1 /* StopWatchViewController.swift */; };
 		FC4C326A2B6694F000CCBDF1 /* AlarmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */; };
 		FC4C326C2B66950700CCBDF1 /* AddAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */; };
-		FC4C327E2B6A8C9B00CCBDF1 /* AlarmSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC4C327D2B6A8C9B00CCBDF1 /* AlarmSound.mp3 */; };
 		FC4C32812B6AD2C500CCBDF1 /* StopWatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C327F2B6AD2C500CCBDF1 /* StopWatchListCell.swift */; };
 		FC4C32822B6AD2C500CCBDF1 /* StopWatchListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C32802B6AD2C500CCBDF1 /* StopWatchListCell.xib */; };
 		FC4C32852B6BE97B00CCBDF1 /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C32842B6BE97B00CCBDF1 /* StopWatchViewModel.swift */; };
@@ -36,7 +35,6 @@
 		FC4C32662B63DBDC00CCBDF1 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		FC4C32692B6694F000CCBDF1 /* AlarmListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewModel.swift; sourceTree = "<group>"; };
 		FC4C326B2B66950700CCBDF1 /* AddAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewModel.swift; sourceTree = "<group>"; };
-		FC4C327D2B6A8C9B00CCBDF1 /* AlarmSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AlarmSound.mp3; path = ../../../../../../Downloads/AlarmSound.mp3; sourceTree = "<group>"; };
 		FC4C327F2B6AD2C500CCBDF1 /* StopWatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchListCell.swift; sourceTree = "<group>"; };
 		FC4C32802B6AD2C500CCBDF1 /* StopWatchListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopWatchListCell.xib; sourceTree = "<group>"; };
 		FC4C32842B6BE97B00CCBDF1 /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 		FC4C325C2B63D24800CCBDF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FC4C32762B6A8BA500CCBDF1 /* AlarmSound */,
 				FCC1EA312B5061CC0001A65A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -142,14 +139,6 @@
 				FCC1EA332B5061CC0001A65A /* LaunchScreen.storyboard */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		FC4C32762B6A8BA500CCBDF1 /* AlarmSound */ = {
-			isa = PBXGroup;
-			children = (
-				FC4C327D2B6A8C9B00CCBDF1 /* AlarmSound.mp3 */,
-			);
-			path = AlarmSound;
 			sourceTree = "<group>";
 		};
 		FC4C32832B6AD2CB00CCBDF1 /* StopWatchListCell */ = {
@@ -285,7 +274,6 @@
 				FCC1EA302B5061C90001A65A /* Main.storyboard in Resources */,
 				FC4C32892B71186A00CCBDF1 /* AlarmListCell.xib in Resources */,
 				FC4C32822B6AD2C500CCBDF1 /* StopWatchListCell.xib in Resources */,
-				FC4C327E2B6A8C9B00CCBDF1 /* AlarmSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

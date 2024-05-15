@@ -39,6 +39,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7c-WD-OLF">
                                 <rect key="frame" x="8" y="159" width="377" height="100"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="377" id="1bY-7w-idK"/>
                                     <constraint firstAttribute="height" constant="100" id="5IQ-FK-njT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="95"/>
@@ -176,7 +177,7 @@
                                 <action selector="alarmEditButtonTapped:" destination="BYZ-38-t0r" id="t8I-Bn-HuN"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ock-sA-Sgb">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ock-sA-Sgb">
                             <rect key="frame" x="184.66666666666666" y="15" width="24" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>

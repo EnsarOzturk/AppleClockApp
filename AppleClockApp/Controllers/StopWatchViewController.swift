@@ -42,30 +42,38 @@ class StopWatchViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func updateStopWatchLabel() {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            let elapsedTime = self.viewModel.elapsedTime
-            self.stopWatchLabel.text = self.viewModel.formatElapsedTime(elapsedTime)
+              guard let self = self else { return }
+              let newTimeText = self.viewModel.formatElapsedTime(self.viewModel.elapsedTime)
+   
+              UIView.animate(withDuration: 0.4, animations: {
+                  self.stopWatchLabel.alpha = 0.0
+              }, completion: { _ in
+                  self.stopWatchLabel.text = newTimeText
+                  UIView.animate(withDuration: 0.3) {
+                      self.stopWatchLabel.alpha = 1.0
+                      }
+                })
+            }
         }
-    }
-      
+    
       @IBAction func startButtonTapped(_ sender: UIButton) {
           if viewModel.isRunning {
               viewModel.stopStopWatch()
               sender.setTitle("Start", for: .normal)
               sender.setTitleColor(UIColor(named: "startButtonTitleColor"), for: .normal)
               sender.backgroundColor = UIColor(named: "startButtonColor")
-              refreshButton.isHidden = true
           } else {
               viewModel.startStopWatch()
               sender.setTitle("Stop", for: .normal)
               sender.setTitleColor(UIColor(named: "stopButtonTitleColor"), for: .normal)
               sender.backgroundColor = UIColor(named: "stopButtonColor")
-              refreshButton.isHidden = false
           }
       }
       
       @IBAction func refreshButtonTapped(_ sender: UIButton) {
           viewModel.resetStopWatch()
+          stopWatchLabel.text = "00:00,00"
+          collectionView.reloadData()
       }
       
       @IBAction func roundButtonTapped(_ sender: UIButton) {

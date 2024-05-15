@@ -27,6 +27,7 @@ class AlarmListViewModel {
     func addAlarm(hour: String, date: Date) {
         let alarm = Alarm(hour: hour, isSwitchOn: true, date: date)
            alarmList.append(alarm)
+           print("Alarm added:", alarmList) 
            saveAlarmListToUserDefaults()
            viewModelDelegate?.updateTableView()
        }
@@ -61,14 +62,20 @@ class AlarmListViewModel {
             } catch {
                 print("Unable to Decode Notes (\(error))")
             }
+        } else {
+            print("No Alarm List found in UserDefaults")
         }
     }
     
     func saveAlarmListToUserDefaults() {
         let encoder = JSONEncoder()
-        let alarmListData = try? encoder.encode(alarmList)
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(alarmListData, forKey: alarmKey)
+        do {
+            let alarmListData = try encoder.encode(alarmList)
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(alarmListData, forKey: alarmKey)
+        } catch {
+            print("Unable to Encode Alarm List: \(error)")
+        }
     }
 }
 
