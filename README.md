@@ -5,7 +5,8 @@ This clone mimics the core features of Apple's original Watch app and organizes 
 # 🔎 Preview
 <p float="left">
   <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/AlarmList.png" width="200" />
-  <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/AlarmEdit.png" width="200" /> 
+  <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/AlarmEdit.png" width="200" />
+  <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/AlarmAdd.png" width="200" />
   <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/Timer.png" width="200" /> 
   <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/TimerRoundList.png" width="200"/>
   <img src="https://github.com/EnsarOzturk/AppleClockApp/blob/main/Screenshots/StopTimer.png" width="200" />
